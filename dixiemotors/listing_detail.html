@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dixie Motors Utah</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/dxmotors.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.ad-gallery.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.ad-gallery.css">
+
+<script>
+$(function() {
+    $('img.image1').data('');
+    $('img.image2').data('ad-title', '');
+    $('img.image4').data('ad-desc', '');
+    $('img.image5').data('ad-desc', '');
+    var galleries = $('.ad-gallery').adGallery();
+    $('#switch-effect').change(
+      function() {
+        galleries[0].settings.effect = $(this).val();
+        return false;
+      }
+    );
+    $('#toggle-slideshow').click(
+      function() {
+        galleries[0].slideshow.toggle();
+        return false;
+      }
+    );
+    $('#toggle-description').click(
+      function() {
+        if(!galleries[0].settings.description_wrapper) {
+          galleries[0].settings.description_wrapper = $('#descriptions');
+        } else {
+          galleries[0].settings.description_wrapper = false;
+        }
+        return false;
+      }
+    );
+	$('a.showToggle').on('click', function(e) {
+		e.preventDefault();
+		$('p.none').slideToggle();
+			$this = $(this);
+			
+			if($this.text() =="Show More >>" ) {
+				$this.text("<< Show Less");	
+			}
+			else {
+				$this.text("Show More >>");	
+			}
+	});
+  });
+</script>
+
+</head>
+
+<body>
+<div class="wrapper-1">
+    <header>
+    	<h1><img src="img/logo_03.png" alt="dxmotors" /> </h1>
+        <div class="company-details">
+        	<p class="phone-number">888-960-1114</p>
+            <p class="streer-add">555 N. Bluff Street</p>
+            <p class="state-add">St. George, Utah</p>
+        </div>
+    </header>
+    <div class="container_1">
+    	    <nav>
+    			<ul id="nav-menu">
+                	<li><a href="">Home</a></li>
+                    <li class="active"><a href="">Inventory</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Finance</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+   			</nav>
+            <div class="container_2">
+            	<div class="search-box-1">
+                    <h2>Similar Vehicles</h2>
+            
+                         <!--  change here=========================================================================-->     
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    <section class="refine-search">
+                        <div class="similar-listings">
+                        	<a href=""><img src="img/s-img.jpg" width="85" height="65" alt="" /></a>
+                        </div>
+                        <div class="similar-listings">
+                        	<p class="similar-listings-name"><a href=""><strong>2010 Acura TL AWD</strong></a></p>
+                            <p><a href="">Black</a></p>
+                            <p><a href="">17,956 mi.</a></p>
+                            <p><a href="">$21,125</a></p>
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+      <!--  change here=========================================================================-->
+                
+                    <section class="refine-search">
+                         <dl>
+                            <dt>View more:</dt>
+                         		<dd><a href="">Preowned inventory</a></dd>
+                                <dd><a href="">Sedans</a></dd>
+                                <dd><a href="">Acura inventory</a></dd>
+                                <dd><a href="">Acura TL</a></dd>
+                                <dd><a href="">2009 inventory</a></dd>
+                                <dd><a href="">- inventory</a></dd>
+                         </dl>
+                    </section>
+                </div>
+                
+                <div class="listings-container-1">
+                	<section class="listings-container-info rounded">
+                  		<div id="vehicle_topbar">
+                              <div id="vehicle_topbar_left">
+                                <a href="/web/inventory">All</a>    
+                                  
+                                 &nbsp;»&nbsp;<a href="/web/inventory"> Acura</a>
+                                 
+                                 
+                                 &nbsp;»&nbsp;<a href="/web/inventory?model=TL">TL</a>
+                              </div>
+                            
+                                <ul id="vehicle_social_buttons" class="social_buttons" style="display: block;">
+                                    <li id="vehicle_google_plus_button"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; padding-top: 2px;width: 70px; height: 15px;" id="___plusone_0"><iframe width="100%" scrolling="no" frameborder="0" hspace="0" marginheight="0" marginwidth="0" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" tabindex="0" vspace="0" id="I0_1378375748290" name="I0_1378375748290" src="https://apis.google.com/_/+1/fastbutton?bsv=o&amp;usegapi=1&amp;size=small&amp;hl=en-US&amp;origin=http%3A%2F%2Fwww.velocitycars.com&amp;url=http%3A%2F%2Fwww.velocitycars.com%2Fweb%2Fused%2FAcura-TL-2009-Draper-Utah%2F8674630%2Fwww.velocitycars.com%2Fweb%2Fused%2FAcura-TL-2009-Draper-Utah%2F8674630%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.ED-YuaM3AT0.O%2Fm%3D__features__%2Fam%3DIQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTNpo58QtV0_9nKV_7OZCUCDJsLsCg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1378375748290&amp;parent=http%3A%2F%2Fwww.velocitycars.com&amp;pfname=&amp;rpctoken=19415795" data-gapiattached="true" title="+1"></iframe></div></li><li rel="http://www.velocitycars.com/web/used/Acura-TL-2009-Draper-Utah/8674630/" id="vehicle_facebook_like_button"><iframe width="90" scrolling="no" height="20" frameborder="0" style="border: medium none; overflow: hidden; width: 90px; height: 20px;" allowtransparency="true" id="vehicle_social_facebook" src="http://www.facebook.com/plugins/like.php?href=http://www.velocitycars.com/web/used/Acura-TL-2009-Draper-Utah/8674630/&amp;layout=button_count&amp;show_faces=true&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=20"></iframe></li><li><iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.1378258117.html#_=1378375745163&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.velocitycars.com%2Fweb%2Fused%2FAcura-TL-2009-Draper-Utah%2F8674630%2F&amp;size=m&amp;text=Check%20out%20this%202009%20Acura%20TL%20%20at%20Velocity%20Auto%20Sales&amp;url=http%3A%2F%2Fwww.velocitycars.com%2Fweb%2Fused%2FAcura-TL-2009-Draper-Utah%2F8674630%2F" class="twitter-share-button twitter-count-horizontal" style="width: 109px; height: 20px;" title="Twitter Tweet Button" data-twttr-rendered="true"></iframe></li><li><a id="vehicle_social_addthis" title="Share this vehicle" onclick="return addthis_sendto()" onmouseout="addthis_close()" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" href="http://www.addthis.com/bookmark.php">Share</a></li><li><a title="Email this vehicle to a friend" rel="nofollow" id="vehicle_social_email" href="/web/emailvehicle/8674630/?KeepThis=true&amp;TB_iframe=true&amp;height=275&amp;width=675" class="thickbox">Email</a></li><li><a title="Print this vehicle" id="vehicle_social_print" href="/web/print_vehicle_v2/8674630">Print</a></li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                    </section><!-- end social media -->
+                    
+                	<section class="listings-container-info rounded">
+                    <form name="listing-filter-form">
+                   		<select name="year-filter">
+                        	<option>All Years</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                        </select>
+                        <select name="make-filter">
+                        	<option>All Makes</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                        </select>
+                        <select name="model-filter">
+                        	<option>All Models</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                        </select>
+                        <input type="submit" name="submit" value="Go" />
+                    </form>
+                    </section><!-- end filter form -->
+                    
+                    <section class="listing-details">
+                    	<div class="listings-detail-data col-1">
+                        	<h3>2009 Acura TL Tech</h3>
+                            <img src="img/d-car.jpg" height="196" width="272" alt="listing-image" />
+                        </div> 
+                        <div class="listings-detail-data col-2">
+                        	<h3>$20,200<span>Internet Price</span></h3>
+                            <p><strong>Colors:</strong> Ext. Black  Int. Gray</p>
+                            <p><strong>Drive:</strong> 4 Wheel Automatic</p>
+                            <p><strong>Engine:</strong>  V-6 cyl. Ecd Turbo</p>
+                            <p class="listing-data-others"><a href=""><strong>View Photos (36)</strong></a></p>
+                        </div> 
+                        <div class="listings-detail-data col-3">
+                       		<h3>801-090-121</h3>
+                            <p><strong>Vin #:</strong> 123456789876</p>
+                            <p><strong>Stock:</strong> ABC123</p>
+                            <p><strong>Miles/Km:</strong> 47,320</p>
+                               <div id="fuel">
+                               		<div id="fuel-city">
+                                        <p>CITY</p>
+                                        <p class="fuelvalue">18</p>
+                                    </div>
+                                    <img src="img/mpg_icon_new.png" alt="" width="32" height="34" />
+                                    <div id="fuel-hwy">
+                                     	<p>HWY</p>
+                                    	<p class="fuelvalue">26</p>
+                                    </div>
+                                    
+                               </div>
+                            <p class="listing-data-link"><a href=""><strong>Request More Info</strong></a></p>
+                        </div>   
+                        <div class="clear"></div>                 
+                    </section><!-- end listing details -->
+                    
+                    <section class="listing-details img-thumbnails">
+						<ul>
+                        	<li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                                 <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                                 <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                            <li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li><li>
+                           		 <a href="#" data-imgthumb =""><img src="img/ld-thumb.jpg" alt="imgthumb" width="60" height="37" /></a>
+                            </li>
+                        </ul>   
+                        <div class="clear"></div>            
+                    </section><!-- end listing gallery -->
+                    
+                    <section class="listing-details listing-desc">
+						   <h2>Features</h2>
+                           <p>
+                           41K MILES & 1-OWNER! Options include; navigation system, heated leather seats, power sunroof, back up camera, memory seating, push button start, bluetooth, radio and cruise controls on steering wheel, dual climate control, power drivers seat, universal garage door opener, AM/FM radio, CD player with AUX hookup, rear air, power locks, power mirrors, power windows, keyless remote entry, ABS brakes, dual front airbags, side airbags and more!
+                           </p> 
+                      
+                           <p>THIS IS INTERNET PRICING ONLY! BRING IN THIS AD, OR CALL 801-639-0300.</p>
+
+                           <p class="none">
+                           
+                           	VISIT www.velocitycars.com or Email us at sales@velocitycars.com
+
+Here at Velocity Auto Sales we work hard to get the car you want at the price you need! Come and check out our NO HAGGLE VELOCITY pricing with NO PRESSURE service. Online prices are internet specials only. Bring in this ad to get the best price on your next vehicle. We have financing available with rates as low as 2.99% and we take all trades. We sell CLEAN TITLE vehicles with FREE CARFAX available. Come see us at our NEW LOCATION 620 W 12300 S in Draper just 1/2 mile from I-15. Velocity Auto Sales Hours of Operation are 9am-9pm Monday Through Friday, 9am-9pm Saturday and Closed Sunday.
+                           </p>
+                             <a href="#" class="showToggle">Show More &gt;&gt;</a>
+                            <div class="clear"></div> 
+                           
+                            <h3 class="strandard_eq">Acura TL Tech Standard Equipment</h3>
+                            
+                            <div class="ip_equipment_column1">
+                                <ul>
+                                    <li class="option_category">EXTERIOR</li>
+                                    <li>P245/50VR17 all-season tires</li>
+                                    <li>Rear lip spoiler</li>
+                                    <li>Front fog lights</li>
+                                    <li>LED tail lights</li>
+                                    <li>LED side marker lights</li>
+                                    <li>Chrome accented door handles</li>
+                                    <li class="option_category">INTERIOR</li>
+                                    <li>Adjustable rear headrests</li>
+                                    <li>Front center console w/adjustable armrest, dual level storage, coin holders</li>
+                                    <li>Rear seat center armrest w/locking trunk pass-through</li>
+                                    <li>3-spoke leather-wrapped collapsible tilt &amp; telescoping steering wheel w/audio, cruise, phone, multi-info display, voice recognition</li>
+                                    <li>Push button ignition</li>
+                                    <li>LED back-lit instruments w/progressive illumination</li>
+                                    <li>Multi-info display w/memory, electronic compass</li>
+                                </ul>
+                                <ul>
+                                    <li class="option_category">EXTERIOR</li>
+                                    <li>P245/50VR17 all-season tires</li>
+                                    <li>Rear lip spoiler</li>
+                                    <li>Front fog lights</li>
+                                    <li>LED tail lights</li>
+                                    <li>LED side marker lights</li>
+                                    <li>Chrome accented door handles</li>
+                                            <li class="option_category">INTERIOR</li>
+                                    <li>Adjustable rear headrests</li>
+                                    <li>Front center console w/adjustable armrest, dual level storage, coin holders</li>
+                                    <li>Rear seat center armrest w/locking trunk pass-through</li>
+                                    <li>3-spoke leather-wrapped collapsible tilt &amp; telescoping steering wheel w/audio, cruise, phone, multi-info display, voice recognition</li>
+                                    <li>Push button ignition</li>
+                                    <li>LED back-lit instruments w/progressive illumination</li>
+                                    <li>Multi-info display w/memory, electronic compass</li>
+                                </ul>
+                                <ul>
+                                    <li class="option_category">EXTERIOR</li>
+                                    <li>P245/50VR17 all-season tires</li>
+                                    <li>Rear lip spoiler</li>
+                                    <li>Front fog lights</li>
+                                    <li>LED tail lights</li>
+                                    <li>LED side marker lights</li>
+                                    <li>Chrome accented door handles</li>
+                                            <li class="option_category">INTERIOR</li>
+                                    <li>Adjustable rear headrests</li>
+                                    <li>Front center console w/adjustable armrest, dual level storage, coin holders</li>
+                                    <li>Rear seat center armrest w/locking trunk pass-through</li>
+                                    <li>3-spoke leather-wrapped collapsible tilt &amp; telescoping steering wheel w/audio, cruise, phone, multi-info display, voice recognition</li>
+                                    <li>Push button ignition</li>
+                                    <li>LED back-lit instruments w/progressive illumination</li>
+                                    <li>Multi-info display w/memory, electronic compass</li>
+                                </ul>
+                                <br/>
+                            </div>
+                    </section><!-- end listing description -->
+                </div>
+                
+                <div class="clear"></div>
+            <footer>
+                <div class="copyright">
+                    <p>2013 Dixie Motors LLC  St.George  UT. 84000</p>
+                    <p>Site Map  -  Privacy Policy</p>
+                    <p>Powered by <a href="http://www.dealerez.com" target="_blank"><span style="color: #276e94;">Dealer</span><span style="color: #d17505;">EZ</span>.com</a></p>   
+                </div>
+            </footer>
+            </div>          
+    </div>
+</div>
+</body>
+</html>
