@@ -1,4 +1,4 @@
-<?php  session_start();
+<?php
 include_once("includes.php");
 
 	$address="199 E. 800 N.";

@@ -14,10 +14,10 @@ if($_REQUEST["work"] == "filterByYear"){
 	$make = '<option value="All">All Makes</option>';
 	$model = '<option value="All">All Model</option>';
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by year order by year desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by year order by year desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(year) as countyear from listing where user_id = 349 and year = $row[year]");
+		$cnt = mysql_query("select count(year) as countyear from listing where dealer_id = 306 and year = $row[year]");
 		
 		if($selected == $row['year'])
 			$year .= "<option selected value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
@@ -25,18 +25,18 @@ if($_REQUEST["work"] == "filterByYear"){
 			$year .= "<option value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by make order by make desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by make order by make desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(make) as countmake from listing where user_id = 349 $params and make = '$row[make]'");
+		$cnt = mysql_query("select count(make) as countmake from listing where dealer_id = 306 $params and make = '$row[make]'");
 		
 		$make .= "<option value='".$row['make']."'>".$row['make']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by model order by model desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by model order by model desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(model) as countmodel from listing where user_id = 349 $params and model = '$row[model]'");
+		$cnt = mysql_query("select count(model) as countmodel from listing where dealer_id = 306 $params and model = '$row[model]'");
 		
 		$model .= "<option value='".$row['model']."'>".$row['model']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
@@ -66,10 +66,10 @@ if($_REQUEST["work"] == "filterByMake"){
 		
 	$model = '<option value="All">All Model</option>';
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by year order by year desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by year order by year desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(year) as countyear from listing where user_id = 349 and year = $row[year] and make = '$make_'");
+		$cnt = mysql_query("select count(year) as countyear from listing where dealer_id = 306 and year = $row[year] and make = '$make_'");
 		
 		if($year_ == $row['year'])
 			$year .= "<option selected value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
@@ -77,10 +77,10 @@ if($_REQUEST["work"] == "filterByMake"){
 			$year .= "<option value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by make order by make desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by make order by make desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(make) as countmake from listing where user_id = 349 $params and make = '$row[make]'");
+		$cnt = mysql_query("select count(make) as countmake from listing where dealer_id = 306 $params and make = '$row[make]'");
 		
 		if($make_ == $row['make'])
 			$make .= "<option selected value='".$row['make']."'>".$row['make']. " (".mysql_result($cnt,0). ")" ."</option>";
@@ -88,10 +88,10 @@ if($_REQUEST["work"] == "filterByMake"){
 			$make .= "<option value='".$row['make']."'>".$row['make']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by model order by model desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by model order by model desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(model) as countmodel from listing where user_id = 349 $params and model = '$row[model]'");
+		$cnt = mysql_query("select count(model) as countmodel from listing where dealer_id = 306 $params and model = '$row[model]'");
 		
 		$model .= "<option value='".$row['model']."'>".$row['model']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
@@ -127,10 +127,10 @@ if($_REQUEST["work"] == "filterByModel"){
 		$params .= " and model = '$model_'";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by year order by year desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by year order by year desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(year) as countyear from listing where user_id = 349 and year = $row[year] and make = '$make_' and model = '$model_'");
+		$cnt = mysql_query("select count(year) as countyear from listing where dealer_id = 306 and year = $row[year] and make = '$make_' and model = '$model_'");
 		
 		if($year_ == $row['year'])
 			$year .= "<option selected value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
@@ -138,10 +138,10 @@ if($_REQUEST["work"] == "filterByModel"){
 			$year .= "<option value='".$row['year']."'>".$row['year']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by make order by make desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by make order by make desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(make) as countmake from listing where user_id = 349 $params and make = '$row[make]'");
+		$cnt = mysql_query("select count(make) as countmake from listing where dealer_id = 306 $params and make = '$row[make]'");
 		
 		if($make_ == $row['make'])
 			$make .= "<option selected value='".$row['make']."'>".$row['make']. " (".mysql_result($cnt,0). ")" ."</option>";
@@ -149,10 +149,10 @@ if($_REQUEST["work"] == "filterByModel"){
 			$make .= "<option value='".$row['make']."'>".$row['make']. " (".mysql_result($cnt,0). ")" ."</option>";
 	}
 	
-	$sql = mysql_query("select * from listing where user_id = 349 $params group by model order by model desc");
+	$sql = mysql_query("select * from listing where dealer_id = 306 $params group by model order by model desc");
 	while($row = mysql_fetch_array($sql)) {
 		//count
-		$cnt = mysql_query("select count(model) as countmodel from listing where user_id = 349 $params and model = '$row[model]'");
+		$cnt = mysql_query("select count(model) as countmodel from listing where dealer_id = 306 $params and model = '$row[model]'");
 		
 		if($model_ == $row['model'])
 			$model .= "<option selected value='".$row['model']."'>".$row['model']. " (".mysql_result($cnt,0). ")" ."</option>";

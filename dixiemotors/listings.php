@@ -1,7 +1,5 @@
 <?php  
 session_start();
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
 include_once("includes.php");
 include_once("Pagination.php");
 $listing_obj = new Listing;
@@ -81,7 +79,6 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                     <dt>Body Styles</dt>
                         <?php 
                             $bodystyle = $listing_obj->getListingsGroupBy(false,false,"created_date","desc",$cond,"body_style");
-                            print_r($bodystyle);
                             foreach($bodystyle as $newbodystyle) {
                                 if($body=='') {
                                     $body_cond = "user_id=$user_id and body_style='$newbodystyle[body_style]'";	

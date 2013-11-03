@@ -1,8 +1,6 @@
 <?php 
 ob_start();
 if(!isset($_GET['debug'])) {
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	//error_reporting(2);
 //	ini_set('display_errors',1);
 //	ini_set('display_startup_errors',1);

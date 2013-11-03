@@ -21,7 +21,7 @@ $stylePageOn	 = "pageOn";
 $styleErrors	 = "paginationErrors";
 $styleSelect	 = "paginationSelect";
 
-$user_id  = 5;
+$dealer_id  = 306;
 
 $make 			= isset($_GET['make'])&&$_GET['make']<>"All" ? " and make='".$_GET['make']."'" : "";
 $model 			= isset($_GET['model'])&&$_GET['model']<>"All" ? " and model='".$_GET['model']."'" : "";
@@ -35,7 +35,7 @@ $yearfrom		= isset($_GET['yearfrom'])&&$_GET['yearfrom']<>"Any" ? " and year >="
 $yearto 		= isset($_GET['yearto'])&&$_GET['yearto']<>"Any" ? " and year <=".$_GET['yearto'] : "";
 
 
-$cond 		= "user_id=$user_id $make $model $body $pricefrom $priceto $vyear $mileagefrom $mileageto $yearfrom $yearto";
+$cond 		= "dealer_id=$dealer_id $make $model $body $pricefrom $priceto $vyear $mileagefrom $mileageto $yearfrom $yearto";
 $orderby	= isset($_GET['order-by']) ? $_GET['order-by'] : "price";
 $sortby 	= isset($_GET['sort-by']) ? $_GET['sort-by'] : "desc";
 
@@ -81,7 +81,7 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                             $bodystyle = $listing_obj->getListingsGroupBy(false,false,"created_date","desc",$cond,"body_style");
                             foreach($bodystyle as $newbodystyle) {
                                 if($body=='') {
-                                    $body_cond = "user_id=$user_id and body_style='$newbodystyle[body_style]'";	
+                                    $body_cond = "dealer_id=$dealer_id and body_style='$newbodystyle[body_style]'";	
 								} else {
 									$body_cond = $cond;	
 								}
@@ -100,7 +100,7 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                             $makes = $listing_obj->getListingsGroupBy(false,false,"created_date","desc",$cond,"make");
                             foreach($makes as $newmakes) {
                             if($make=='') {
-                                $make_cond = "user_id=$user_id and make='$newmakes[make]'";	
+                                $make_cond = "dealer_id=$dealer_id and make='$newmakes[make]'";	
                             } else {
                                 $make_cond = $cond;	
                             }
@@ -119,7 +119,7 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                         
                         foreach($models as $newmodels) {
                             if($model=='') {
-                                $model_cond = "user_id=$user_id and model='$newmodels[model]'";	
+                                $model_cond = "dealer_id=$dealer_id and model='$newmodels[model]'";	
                             } else {
                                 $model_cond = $cond;	
                             }
@@ -138,7 +138,7 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                     
                         foreach($years as $newyear) {
 							if($year=='') {
-								$year_cond = "user_id=$user_id and year='$newyear[year]'";
+								$year_cond = "dealer_id=$dealer_id and year='$newyear[year]'";
 							}  else {
 								$year_cond = $cond;	
 							}
@@ -284,7 +284,7 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
 <!-- ==================================data to be loaded from mysql=============================================-->   
                        
          <?php foreach($listings as $dispListing){ ?>
-         <?php $newuserdetails = $user_obj->get_user_detail($dispListing['user_id']);    
+         <?php $newuserdetails = $user_obj->get_user_detail($dispListing['dealer_id']);    
             $carname = $dispListing['year']." ".$dispListing['make']." ".$dispListing['model'];
          ?>
             <section class="listings-container-info">

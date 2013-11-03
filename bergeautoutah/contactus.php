@@ -44,7 +44,7 @@ if(isset($_POST['submit'])) {
 		$to		=	"labrums@yahoo.com";
 		$headers	= 	"From: info@bergeautoutah.com" . "\r\n" .
 					"Reply-To: info@bergeautoutah.com " . "\r\n" .
-					"Cc: support@dealerez.com" . "\r\n";
+					"Cc: support@dealerez.com, twocngdagz@yahoo.com" . "\r\n";
 	
 		$subject	=	"Berge Auto Contact Us";
 	
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])) {
 
 	
 	
-		mail($to, $subject, $body, $headers);
+		@mail($to, $subject, $body, $headers);
 		$_SESSION['msg_alert'] = "Message Successfully Sent.";	
 		msgbox("Message Successfully Sent");
 	}
