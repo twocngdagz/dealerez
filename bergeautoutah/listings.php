@@ -79,7 +79,6 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                     <dt>Body Styles</dt>
                         <?php 
                             $bodystyle = $listing_obj->getListingsGroupBy(false,false,"created_date","desc",$cond,"body_style");
-                            
                             foreach($bodystyle as $newbodystyle) {
                                 if($body=='') {
                                     $body_cond = "user_id=$user_id and body_style='$newbodystyle[body_style]'";	

@@ -145,6 +145,67 @@ function get_all_listing($start_limit=false,$end_limit=false,$order_by=false,$so
 	return $result_info;
 
 }
+//count number of listing for selected user_id
+function get_listings_count_by_userid($user_id) {
+	if($user_id) {
+		$sql = "select count(*) from listing inner join users on listing.user_id = users.user_id where users.user_id = " .$user_id;
+	}
+	
+	$result=Execute_command($sql);
+	$count = mysql_result($result,0);
+	return $count;
+}
+//added by leo 9/12/2013
+function getVehicleDataWithCounts($user_id=false,$data=false) {
+	$result_info=array();
+	if($user_id) {
+		$sql = "select * from listing where user_id = $user_id";
+	}	
+	$result=Execute_command($sql);
+			$a=0;
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	return $result_info;
+}
+function getSimilarVehicle($user_id=false,$vehicle,$lid) {
+	$result_info=array();
+		if($user_id) {
+			$sql = "select * from listing where user_id = $user_id and make = '$vehicle' and listing_id <> $lid";
+		}
+		else {
+			$sql = "select * from listing where make = '$vehicle' and listing_id <> $lid";
+		}
+		//echo $sql;
+		$result=Execute_command($sql);
+			//echo $sql;
+			$a=0;
+			
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	
+	
+
+	return $result_info;
+		
+}
 //CREATED BY: LEO NEIL ::: FUNCTION WILL RETURN ALL LISTING FOR SEARCH
 function getall_listing($start_limit=false,$end_limit=false,$order_by=false,$sort_by=false,$cond=false)
 {	$result_info=array();
@@ -190,6 +251,140 @@ function getall_listing($start_limit=false,$end_limit=false,$order_by=false,$sor
 						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
 						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); //ADDED 2-21-2013
 						//$result_info[$a]['user_details']=$this->get_user_details($record['listing_id']);
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	
+	
+
+	return $result_info;
+
+}
+//CREATED BY: LEO NEIL ::: 8/2/2013
+function countInquiresToday($cartype) {
+		$dateToday = date("Y-m-d");
+		
+		if($cartype=="new") {
+			$sql="select count(*) from  listing_inquiries WHERE subject = 'Enquiry - New Car Quote' and add_date = '$dateToday'";
+		}
+		else {
+			$sql="select count(*) from  listing_inquiries WHERE subject = 'Enquiry - Used Car Quote' and add_date = '$dateToday'";
+		}
+		
+		$result=Execute_command($sql);
+		$count = mysql_result($result,0);
+		return $count;
+}
+function getListingsGroupBy($start_limit=false,$end_limit=false,$order_by=false,$sort_by=false,$cond=false,$groupby=false)
+{	$result_info=array();
+	
+			$cond = isset($cond)?$cond:'';
+			$order_by = isset($order_by)?$order_by:'';
+			$sort_by = isset($sort_by)?$sort_by:'';
+			$start_limit =  isset($start_limit)?$start_limit:'';
+			$end_limit =  isset($end_limit)?$end_limit:'';
+			$groupby = isset($groupby)?"group by ".$groupby:'';
+			
+			if($cond)
+			{
+				if($end_limit)
+				{
+					$sql="select * from  listing WHERE $cond $groupby ORDER BY $order_by $sort_by LIMIT ".$start_limit.",".$end_limit;
+				}
+				else
+				{
+					$sql="select * from  listing WHERE $cond $groupby ORDER BY $order_by $sort_by";
+				}
+			}
+			else
+			{ 
+				if($end_limit)
+				{
+					$sql="select * from  listing ORDER BY $order_by $sort_by LIMIT ".$start_limit.",".$end_limit;
+				}
+				else
+				{
+					$sql="select * from  listing ORDER BY $order_by $sort_by";
+				}
+			}
+			
+			
+			$result=Execute_command($sql);
+			
+			//echo $sql;
+			
+			$a=0;
+			
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$listing_id = $record['listing_id'];
+					
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	
+	
+
+	return $result_info;
+
+}
+
+//CREATED BY: LEO NEIL ::: 6/27/2013
+function getListings($start_limit=false,$end_limit=false,$order_by=false,$sort_by=false,$cond=false)
+{	$result_info=array();
+	
+			$cond = isset($cond)?$cond:'';
+			$order_by = isset($order_by)?$order_by:'';
+			$sort_by = isset($sort_by)?$sort_by:'';
+			$start_limit =  isset($start_limit)?$start_limit:'';
+			$end_limit =  isset($end_limit)?$end_limit:'';
+			
+			if($cond)
+			{
+				if($end_limit)
+				{
+					$sql="select * from  listing WHERE $cond ORDER BY $order_by $sort_by LIMIT ".$start_limit.",".$end_limit;
+				}
+				else
+				{
+					$sql="select * from  listing WHERE $cond ORDER BY $order_by $sort_by";
+				}
+			}
+			else
+			{ 
+				if($end_limit)
+				{
+					$sql="select * from  listing ORDER BY $order_by $sort_by LIMIT ".$start_limit.",".$end_limit;
+				}
+				else
+				{
+					$sql="select * from  listing ORDER BY $order_by $sort_by";
+				}
+			}
+			
+			
+			$result=Execute_command($sql);
+			
+			//echo $sql;
+			
+			$a=0;
+			
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$listing_id = $record['listing_id'];
+					
 						$a++;	
 					}
 			}
@@ -358,6 +553,7 @@ function get_feature_listing($user_id)
 					{
 						$result_info[$a]=$record;
 						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
+						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); //ADDED 2-21-2013
 						$a++;	
 					}
 			}
@@ -618,6 +814,11 @@ function get_listing_images($listing_id,$limit = false)
 	return $result_info;
 
 }
+function get_img_name($listing_id) {
+		$sql_img = mysql_query("select image_name from listing_images where listing_id=$listing_id limit 1");
+		$row_img = mysql_result($sql_img,0);
+		return $row_img;
+}
 ////MODIFIED BY: LEO NEIL :::FUNCTION WILL RETURN LISTING IMAGE
 function get_listing_image_name($listing_id)
 {	$result_info=array();
@@ -651,6 +852,7 @@ function get_listing_image_name($listing_id)
 	return $result_info;
 
 }
+
 function get_image($listing_id)
 {	
 	$img_details = array();
@@ -884,6 +1086,29 @@ function get_all_categories()
 	
 }
 
+//FUNCTION WILL RETURN LIST OF BODY STYLE
+function get_body_style_groupByStyleName()
+{
+		$result_info=array();
+		$sql="SELECT * FROM body_style group by style_name";
+		$result=Execute_command($sql);
+		$a=0;
+		
+		try	{
+				while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$a++;
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+		
+		return $result_info;
+	
+}
 //FUNCTION WILL RETURN LIST OF ALL CATEGORIES
 function get_body_style()
 {
@@ -1145,6 +1370,7 @@ function dropDownOptionListing($userid){
 	return $option;
 }
 
+
 function dropDownOptionListing2($userid,$listingID){
 	
 	$sql = "select listing_id, title from listing where user_id = ".$userid;
@@ -1316,7 +1542,6 @@ function remove_listing_images($listing_id=false,$image_id=false)
 
 
 }
-
 //FUNCTION WILL DELETE DEALER ALL LISTING FROM DATABASE
 function delete_dealer_all_listing($user_id=false)
 {

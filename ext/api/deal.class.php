@@ -22,14 +22,12 @@ class deal{
 				, dc.mname
 				, dc.lname
 				, dsi.type_of_sale
-				, di.listing_id
 			FROM
 				deals d
 				, deal_contact dc
 				, deal_sale_information dsi
-				, deal_inventory di
 			WHERE
-				dc.deal_id = d.deal_id
+				d.deal_id = dc.deal_id
 				and
 				d.deal_id = dsi.deal_id
 				and
@@ -59,12 +57,10 @@ class deal{
 				, dc.mname
 				, dc.lname
 				, dsi.type_of_sale
-				, di.listing_id
 			FROM
 				deals d
 				, deal_contact dc
 				, deal_sale_information dsi
-				, deal_inventory di
 			WHERE
 				d.deal_id = dc.deal_id
 				and

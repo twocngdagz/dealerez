@@ -4,6 +4,7 @@ $listing_obj = new Listing;
 $user_obj    = new User;
 
 $featureListing = $listing_obj->get_feature_listing(306); 
+
 $user_id  = 306;
 ?>
 <?php include_once("header.php"); ?>

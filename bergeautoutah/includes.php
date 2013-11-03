@@ -1,7 +1,6 @@
 <?php
 
 if(!isset($_GET['debug'])) {
-
 	error_reporting(0);
 	/*ini_set('display_errors',1);
 	ini_set('display_startup_errors',1);
@@ -14,9 +13,8 @@ if(!isset($_GET['debug'])) {
 	//define('DEBUG_MODE',true);	
 
 }
-
-$includepath="/home/dealerez/public_html/sandbox/ext/includes/";
-$apipath	="/home/dealerez/public_html/sandbox/ext/api/";
+$includepath= "C:\\wamp\\www\\dealerez\\ext\\includes\\";
+$apipath	= "C:\\wamp\\www\\dealerez\\ext\\api\\";
 
 include_once($includepath."connection.inc.php");
 include_once($includepath."constants.php");
