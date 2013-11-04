@@ -40,16 +40,20 @@ if(isset($_POST['submit'])) {
 	  	$_SESSION['msg_error'] = "The reCAPTCHA wasn't entered correctly.";	
 	  } else {
 	        //send mail
-		$from		=	"info@bergeautoutah.com";
+		// $from		=	"info@bergeautoutah.com";
 		$to		=	"labrums@yahoo.com";
-		$headers	= 	"From: info@bergeautoutah.com" . "\r\n" .
-					"Reply-To: info@bergeautoutah.com " . "\r\n" .
-					"Cc: support@dealerez.com, twocngdagz@yahoo.com" . "\r\n";
+		// $headers	= 	"From: info@bergeautoutah.com" . "\r\n" .
+		// 			"Reply-To: info@bergeautoutah.com " . "\r\n" .
+		// 			"Cc: support@dealerez.com" . "\r\n";
+        $headers     = 'MIME-Version: 1.0' . "\r\n";
+        $headers  .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers    .= "From: <info@bergeautoutah.com>". "\r\n";
+        $headers    .= "Reply-To: <info@bergeautoutah.com>". "\r\n";
 	
 		$subject	=	"Berge Auto Contact Us";
 	
 		
-		$body		=	"<html><body>
+		$body		=	"<div>
 					Dear Dealer, <br /> <br />
 					<br />
 					<br />
@@ -80,7 +84,7 @@ if(isset($_POST['submit'])) {
 					Support
 					<br />
 					BergeAutoUtah.com
-					</body></html>";
+					</div>";
 
 	
 	
