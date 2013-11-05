@@ -229,7 +229,7 @@ function addCobuyer(){
                                     </select>
                               		<div class="clear"></div>
                                     <label>Social Security No.</label>
-                                    <input name="ssn1" type="¸—6V¬Ìq[ss="frm47" required="required">
+                                    <input name="ssn1" type="text" class="frm47" required="required">
                                     <input name="ssn2" type="text" class="frm47" required="required">
                                     <input name="ssn3" type="text" class="frm47" required="required">
                                 </div>
@@ -497,7 +497,7 @@ function addCobuyer(){
                                     <select name="emp_type" class="frm151" style="height: 23px;" required="required">
                                     	<option>Employee</option>
                                     </select>
-                     '            <div class="clear"></div>
+                                    <div class="clear"></div>
                                     <label>Time with Employer</label>
                                     <select name="cobuyer_twe_years" class="selectdate">
                                         <option selected value="">Years</option>

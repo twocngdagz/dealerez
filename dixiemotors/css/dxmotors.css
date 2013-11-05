@@ -41,6 +41,14 @@ select {
 	color: #333;
 	padding: 2px;	
 }
+
+.sold {
+	font-size: large;
+	text-align: right;
+	position: relative;
+	color: red;
+	font-family: Century Gothic, Helvetica, sans-serif;
+}
 /* Colors */
 .color-1 { color: #5d5d5e; }
 .color-2 { color: #000000; }
@@ -123,6 +131,9 @@ header h1, header .company-details {
 }
 .marginan a {
 	margin-top: 28px !important;	
+}
+.marginanb a {
+	margin-top: 10px !important;	
 }
 .container_1 nav ul#nav-menu > li a {
 	display: block;
