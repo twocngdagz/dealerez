@@ -90,15 +90,19 @@ if(isset($_POST['submit_loan'])) {
 	$agree		= $_POST['agree'];
 	
 	//send mail
-	$from		=	"info@dixiemotors.com";
-	$to		=	"labrums@yahoo.com";
-	$headers	= 	"From: info@dixiemotors.com" . "\r\n" .
-				"Reply-To: labrums@yahoo.com " . "\r\n" .
-				"Cc: support@dealerez.com" . "\r\n";
-	$subject	=	"Dixie Motors Finance Application";
+	//$from		=	"info@dixiemotors.com";
+	//$to		=	"labrums@yahoo.com";
+	//$headers	= 	"From: info@dixiemotors.com" . "\r\n" .
+	$to 		= "twocngdagz@yahoo.com";
+	$headers	= 'MIME-Version: 1.0' . "\r\n";
+    $headers  	.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers	.= "From: <roy.beldia@gmail.com>" . "\r\n";
+	$headers	.= "Reply-To: <roy.beldia@gmail.com>" . "\r\n";
+	$headers	.= "Cc: <glenn@impactsources.com>" . "\r\n";
+	$subject	= "Berge Auto Finance Application";
 
 	
-	$body		=	"<html><body>
+	$body		=	"<div>
 					Dear Dealer, <br /> <br />
 
 					We pleased to present you following Auto Loan Application from our www.dixiemotors.com website.
@@ -257,12 +261,12 @@ if(isset($_POST['submit_loan'])) {
 					
 					Support
 					<br />
-					Dixiemotors.com
-					</body></html>";
+					BergeAutoUtah.com
+					</div>";
 
 	
 	
-	smail($to, $subject, $body, $headers);	
+	@mail($to, $subject, $body, $headers);	
 	$_SESSION['msg_alert']="Auto Loan Application successfully sent!";	
 	msgbox("Auto Loan Application successfully sent!");
 }

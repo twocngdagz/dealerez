@@ -568,6 +568,38 @@ function get_feature_listing($user_id)
 	return $result_info;
 
 }
+
+//FUNCTION WILL RETURN DEALER FEATURE LISTING
+function get_feature_listingberge($user_id)
+{	$result_info=array();
+	
+	if($user_id)
+	{
+			$sql="select * from listing where dealer_id=$user_id and is_featured=1 order by Rand() ";
+			$result=Execute_command($sql);
+			
+			$a=0;
+			
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
+						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); //ADDED 2-21-2013
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	}
+	
+
+
+	return $result_info;
+
+}
 //FUNCTION WILL RETURN LISTING ACCORDING TO SEARCH CATEGORY 
 function get_search_listing($result_per_page=false,$page=false,$make=false,$price_from=false,$price_to=false,$region=false)
 {	
