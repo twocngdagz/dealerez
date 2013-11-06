@@ -316,13 +316,12 @@ $lcount 	= $listing_obj->getListings(false,false,$orderby,$sortby,$cond);
                     <p class="listing-data-price">$<?php echo number_format($dispListing['price']); ?></p>
                     <p class="listing-data-sub">Internet Price</p>
                     <?php
-                    if ($dispListing['featured_tag'] == "Sorry Sold")
-                    {
+                    if (isset($dispListing['featured_tag']) && ($dispListing['featured_tag'] != '0')) {
                     ?>
-                        <h3 class="sold">Sorry Sold!</h3>
+                        <h3 class="sold"><?php echo $dispListing['featured_tag']?></h3>
                         <p class="listing-data-link marginanb"><a href="listing_detail.php?lid=<?php echo $dispListing['listing_id'];?>">View Details</a></p>
                     <?php
-                    } else {
+                    }else {
                     ?>
                         <p class="listing-data-link marginan"><a href="listing_detail.php?lid=<?php echo $dispListing['listing_id'];?>">View Details</a></p>
                     <?php    
