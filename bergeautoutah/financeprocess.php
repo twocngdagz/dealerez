@@ -6,6 +6,7 @@ $mysql		 = new Mysql;
 if(isset($_POST['submit_loan'])) {
 	
 	//number 1
+	$listing_id = $_POST['listing_id'];
 	$v_make		= $_POST['v_make'];
 	$vendor		= $_POST['vendor'];
 	$model		= $_POST['model'];
@@ -54,6 +55,7 @@ if(isset($_POST['submit_loan'])) {
 	
 	/*cobuyers information*/
 	//personal info
+	$cobuyer 			= $_POST['cobuyer'];
 	$cobuyer_firstname 	= $_POST['cobuyer_fname'];
 	$cobuyer_lastname  	= $_POST['cobuyer_lname'];
 	$cobuyer_email 	   	= $_POST['cobuyer_email'];
@@ -101,11 +103,102 @@ if(isset($_POST['submit_loan'])) {
 	$headers	.= "Cc: <glenn@impactsources.com>" . "\r\n";
 	$subject	= "Berge Auto Finance Application";
 
+	$cobuyer_detail = "
+					<strong>
+					Co-buyer's Personal Information
+					</strong>
+					<br/><br/>
+					Customer Name: ".   $cobuyer_firstname." ".$cobuyer_lastname."
+					 <br />					
+					Customer Email: ".  $cobuyer_email."
+					 <br />					
+					Customer Phone: ". $cobuyer_cellphone1."
+					 <br /> 
+					Date of Birth: ". $cobuyer_bday."
+					<br />
+					Social Security No.: ". $cobuyer_ssn."
+					 <br /> 
+					 <br/>
+					<strong>
+					Co-buyer's Residential Information
+					</strong>
+					<br/><br/>
+					Address: ". $cobuyer_address."
+					<br />
+					City: ". $cobuyer_city."
+					 <br /> 
+					State: ". $cobuyer_state."
+					 <br /> 
+					Zip: ". $cobuyer_zip."
+					 <br />
+					Residence Type: ". $cobuyer_residence_type."
+					 <br /> 
+					Time at Address: ". $cobuyer_time_address_year." years ".$cobuyer_time_address_months." months "."
+					 <br />
+					Monthly Payment: ". $cobuyer_monthly_payment."
+					<br/>
+					<br/>
+					
+					<strong>
+					Co-buyer's Employment Information
+					</strong>
+					<br/><br/>
+					Employer Name: ". $cobuyer_emp_name."
+					<br/>
+					Occupation: ". $cobuyer_occupation."
+					<br/>
+					Work Phone: ". $cobuyer_emp_phone1."
+					<br/>
+					Employer Zip: ". $cobuyer_emp_zip."
+					<br/>
+					Employmnet Type: ". $cobuyer_emp_type."
+					<br/>
+					Time with Employer: ". $cobuyer_twe_years." years ".$cobuyer_twe_months." months "."
+					<br/>
+					Monthly Income: ".$cobuyer_monthly_income."
+					<br/>
+					<strong>
+					<br /> 
+					Co-buyer's Additional Information: 
+					</strong>
+					<ul>
+						<li>Checking Account: $cobuyers_ca</li>
+						<li>Saving Account: $cobuyers_sa</li>
+						<li>Credit Card: $cobuyers_cc</li>
+					</ul>
+					";
+
+	$vehicle_info = "
+					<strong>
+					Vehicle Information
+					<br /><br />
+					<a href='http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id' target='_blank'>http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id</a>
+					</strong>
+						<ul>
+							<li>Year: $year</li>
+							<li>Make: $v_make</li>
+							<li>Model: $model</li>
+							<li>Price: $ $price</li>
+							<li>Vendor: $vendor</li>
+							<li>Vin: $vin</li>
+							<li>City: $v_city</li>
+							<li>State: $v_state</li>
+							<li>Phone: $v_phone</li>
+							<li>Fax: $v_fax</li>
+						</ul>
+
+					We wish you success in your follow-up of this potential sale.
+					 <br />
+					 <br />
+					Support @
+					<br />
+					DealerEZ.com 
+					</div>";
 	
 	$body		=	"<div>
 					Dear Dealer, <br /> <br />
 
-					We pleased to present you following Auto Loan Application from our www.dixiemotors.com website.
+					We are pleased to present you following Vehicle Loan Application from website <a href='http://www.bergeautoutah.com' target='_blank'>www.bergeautoutah.com</a>
 					<br />
 					<br/>
 					<br />
@@ -138,7 +231,7 @@ if(isset($_POST['submit_loan'])) {
 					 <br />
 					Residence Type: ". $residence_type."
 					 <br /> 
-					Time at Address: ". $time_address_year." ".$time_address_months."
+					Time at Address: ". $time_address_year." years ".$time_address_months." months "."
 					 <br />
 					Monthly Payment: ". $monthly_payment."
 					<br/>
@@ -158,7 +251,7 @@ if(isset($_POST['submit_loan'])) {
 					<br/>
 					Employmnet Type: ". $emp_type."
 					<br/>
-					Time with Employer: ". $twe_years." ".$twe_months."
+					Time with Employer: ". $twe_years." years ".$twe_months." months "."
 					<br/>
 					Monthly Income: ".$monthly_income."
 					<br/>
@@ -167,103 +260,18 @@ if(isset($_POST['submit_loan'])) {
 					Additional Information: 
 					</strong>
 					<ul>
-						<li><strong>Checking Account: </strong>$ca</li>
-						<li><strong>Saving Account: </strong>$sa</li>
-						<li><strong>Credit Card: </strong>$cc</li>
+						<li>Checking Account: $ca</li>
+						<li>Saving Account: $sa</li>
+						<li>Credit Card: $cc</li>
 					</ul>
-					
-					<strong>
-					Cobuyer's Personal Information
-					</strong>
-					<br/><br/>
-					Customer Name: ".   $cobuyers_firstname." ".$cobuyers_lastname."
-					 <br />					
-					Customer Email: ".  $cobuyers_email."
-					 <br />					
-					Customer Phone: ". $cobuyers_cellphone1."
-					 <br /> 
-					Date of Birth: ". $cobuyers_bday."
-					<br />
-					Social Security No.: ". $cobuyers_ssn."
-					 <br /> 
-					 <br/>
-					<strong>
-					Cobuyer's Residential Information
-					</strong>
-					<br/><br/>
-					Address: ". $cobuyers_address."
-					<br />
-					City: ". $cobuyers_city."
-					 <br /> 
-					State: ". $cobuyers_state."
-					 <br /> 
-					Zip: ". $cobuyers_zip."
-					 <br />
-					Residence Type: ". $cobuyers_residence_type."
-					 <br /> 
-					Time at Address: ". $cobuyers_time_address_year." ".$cobuyers_time_address_months."
-					 <br />
-					Monthly Payment: ". $cobuyers_monthly_payment."
 					<br/>
-					<br/>
-					
-					<strong>
-					Cobuyer's Employment Information
-					</strong>
-					<br/><br/>
-					Employer Name: ". $cobuyers_emp_name."
-					<br/>
-					Occupation: ". $cobuyers_occupation."
-					<br/>
-					Work Phone: ". $cobuyers_emp_phone1."
-					<br/>
-					Employer Zip: ". $cobuyers_emp_zip."
-					<br/>
-					Employmnet Type: ". $cobuyers_emp_type."
-					<br/>
-					Time with Employer: ". $cobuyers_twe_years." ".$cobuyers_twe_months."
-					<br/>
-					Monthly Income: ".$cobuyers_monthly_income."
-					<br/>
-					<strong>
-					<br /> 
-					Cobuyer's Additional Information: 
-					</strong>
-					<ul>
-						<li><strong>Checking Account: </strong>$cobuyers_ca</li>
-						<li><strong>Saving Account: </strong>$cobuyers_sa</li>
-						<li><strong>Credit Card: </strong>$cobuyers_cc</li>
-					</ul>
-					
-					<strong>
-					Vehicle Information
-					</strong>
-						<ul>
-							<li><strong>Year: </strong>$year</li>
-							<li><strong>Make: </strong>$v_make</li>
-							<li><strong>Model: </strong>$model</li>
-							<li><strong>Price: </strong>$ $price</li>
-							<li><strong>Vendor: </strong>$vendor</li>
-							<li><strong>Vin: </strong>$infovin</li>
-							<li><strong>City: </strong>$v_city</li>
-							<li><strong>State: </strong>$v_state</li>
-							<li><strong>Phone: </strong>$v_phone</li>
-							<li><strong>Fax: </strong>$v_fax</li>
-						</ul>
+					";
 
-					We trust you will provide a good follow-up service and reply to this email with a final report status.
-					 <br /> <br />
-					 
-					
-					Sincere best wishes for your success!
-					 <br />
-					 <br />
-					
-					Support
-					<br />
-					BergeAutoUtah.com
-					</div>";
-
+	if ($cobuyer) {
+		$body = $body.$cobuyer_detail.$vehicle_info;
+	} else {
+		$body = $body.$vehicle_info;
+	}
 	
 	
 	@mail($to, $subject, $body, $headers);	

@@ -600,6 +600,38 @@ function get_feature_listingberge($user_id)
 	return $result_info;
 
 }
+
+//FUNCTION WILL RETURN DEALER FEATURE LISTING
+function get_listing_by_vin($vin)
+{	$result_info=array();
+	
+	if($vin)
+	{
+			$sql="select * from listing where vin='$vin' ";
+			$result=Execute_command($sql);
+			
+			$a=0;
+			
+			try
+			{		while($record=mysql_fetch_array($result))
+					{
+						$result_info[$a]=$record;
+						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
+						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); 
+						$a++;	
+					}
+			}
+			catch(Exception $e)
+			{
+				$_SESSION['mysql_eror']=$result;
+			}
+	}
+	
+
+
+	return $result_info;
+
+}
 //FUNCTION WILL RETURN LISTING ACCORDING TO SEARCH CATEGORY 
 function get_search_listing($result_per_page=false,$page=false,$make=false,$price_from=false,$price_to=false,$region=false)
 {	

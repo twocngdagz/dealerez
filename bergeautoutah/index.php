@@ -40,9 +40,9 @@ $user_id  = 306;
                                	<ul>
                                 <?php 
                                 	//$makes = $listing_obj->getListingsGroupBy(false,false,"make","asc","user_id=$user_id","make");
-                                	$makes = $listing_obj->getListingsGroupBy(0,8,"make","asc","user_id=$user_id","make");
+                                	$makes = $listing_obj->getListingsGroupBy(0,8,"make","asc","dealer_id=$user_id","make");
                                 	foreach($makes as $newmakes) {
-                                		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and user_id = $user_id");
+                                		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and dealer_id = $user_id");
                                 ?>
                                 	<li><a href="listings.php?make=<?php echo $newmakes['make'];?>"><?php echo $newmakes['make']." (".mysql_num_rows($count).")"; ?></a></li>
                                 <?php } ?>
