@@ -1,6 +1,17 @@
 <?php 	
 include_once("includes.php");
 
+$id     = isset($_POST['id']) ? $_POST['id'] : false;
+if($id) {
+  $sql = mysql_query("Select * from listing where listing_id = $id");
+  $row = mysql_fetch_array($sql);
+  $row['price'] = number_format($row['price']);
+  $sql = mysql_query("select * from listing_images where listing_id=$id order by display_order");
+  $images = mysql_fetch_array($sql);
+  $row['imagepath'] = $images['image_name'];
+  echo json_encode($row);
+}
+
 if($_REQUEST["work"] == "filterByYear"){
 	
 	$selected = $_POST['year'];

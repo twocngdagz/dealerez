@@ -14,8 +14,20 @@ $_city	= $_REQUEST['city'];
 $_state	= $_REQUEST['state'];
 $_phone	= $_REQUEST['phone'];
 $_fax	= $_REQUEST['fax'];
+$_image_url = $_REQUEST['image_url'];
 
 $listing = $listing_obj->get_listing_by_vin($_vin);
+$makes = $listing_obj->getListingsGroupBy(false,false,"make","asc","dealer_id = 306","make");
+$years = $listing_obj->getListingsGroupBy(false,false,"year","asc","dealer_id = 306","year");
+$models = $listing_obj->getListingsGroupBy(false,false,"model","asc","dealer_id = 306","model");
+
+// foreach ($makes as $make) {
+//   $make_name = $make['make'];
+//   $vehicles = $listing_obj->getall_listing(false,false,"title","asc","dealer_id = 306 and make='$make_name'");
+//   foreach ($vehicles as $vehicle) {
+//     echo $vehicle['title']."<br>";
+//   }
+// }
 
 include_once("header.php"); ?>
 <script>
@@ -29,6 +41,8 @@ include_once("header.php"); ?>
  var monthly_payment = $('#monthly_payment').val();
  var monthly_income  = $('#monthly_income').val();
  var email			  = $('#email').val();
+
+
 
 	  //check if it is number
 
@@ -56,6 +70,39 @@ include_once("header.php"); ?>
 				grey.attr({disabled:'disabled'});
 			}
 		});
+    if((getQueryVariable('image_url')) == -1) {
+      $('.col6').css('display','none');
+    }
+    $('#vehicle').on('change', function(value) {
+      if ($(this).val() !== "") {
+        $('.col6').css('display','block');
+        var imagepath = "http://www.dealerez.com/sandbox/web/uploads/listing/thumb/";
+        $.ajax({
+              type:'POST',
+              url:"ajax.php",
+              data:"id="+$(this).val(),
+              dataType: "json",
+              success:function(data) {
+                imagepath = imagepath + data['imagepath'];
+                $('#v_make').val(data['make']);
+                $('#model').val(data['model']);
+                $('#year').val(data['year']);
+                $('#vin').val(data['vin']);
+                $('#price').val('$'+data['price']);
+                $('#vehicle_image').attr('src', imagepath);
+              }
+            });
+      }
+      else {
+        $('.col6').css('display','none');
+         $('#v_make').val('');
+        $('#model').val('');
+        $('#year').val('');
+        $('#vin').val('');
+        $('#price').val('$0');
+      }
+    });
+    
 		//select only after  approval.
 		$('#select_after').on('click',function(){
 			if(grey.is(':disabled')){
@@ -69,6 +116,21 @@ include_once("header.php"); ?>
    });
 
   });
+
+function getQueryVariable(variable)
+{ 
+  var query = window.location.search.substring(1); 
+  var vars = query.split("&"); 
+  for (var i=0;i<vars.length;i++)
+  { 
+    var pair = vars[i].split("="); 
+    if (pair[0] == variable)
+    { 
+      return pair[1]; 
+    } 
+  }
+  return -1; //not found 
+}
 
 function addCobuyer(){
 	var cb = document.getElementById('cobuyer');
@@ -155,11 +217,70 @@ function addCobuyer(){
                 <div class="select_vehicle" style="color:#fff;">
                  <span style="display:block;height: 30px;width: 30px;text-align: center; background: #1A4782;color: #fff;font-size: 25px;font-weight: bold;">1</span>
                  <div class="txt01">Selected Vehicle:</div>
-                 <div class="indicate"><input name="as_is" id="as_is" type="checkbox" value=""> As indicated below</div> 
-                 <div class="aft_approval"><input name="select_after" id="select_after" type="checkbox" value=""> I&rsquo;ll select after my approval.</div> 
+                  <select class="vehicle" id="vehicle">
+                      <option value="">Select</option>
+                      <optgroup label="MAKES">
+                      <?php
+                        foreach ($makes as $make) {
+                          $make_name = $make['make'];
+                          $vehicles = $listing_obj->getall_listing(false,false,"title","asc","dealer_id = 306 and make='$make_name'");
+                      ?>
+                           <optgroup label="<?php echo $make['make'] ?>">    
+                            <?php
+                              foreach ($vehicles as $vehicle) {
+                            ?>
+                              <option value="<?php echo $vehicle['listing_id']; ?>"><?php echo $vehicle['title']; ?></option>
+                            
+                      <?php
+                          } 
+                        }
+                      ?>
+                        </optgroup>
+                      </optgroup>
+                      <option value=""></option>
+                      <optgroup label="MODELS">
+                      <?php
+                        foreach ($models as $model) {
+                          $model_name = $model['model'];
+                          $vehicles = $listing_obj->getall_listing(false,false,"title","asc","dealer_id = 306 and model='$model_name'");
+                      ?>
+                           <optgroup label="<?php echo $model['model'] ?>">    
+                            <?php
+                              foreach ($vehicles as $vehicle) {
+                            ?>
+                              <option value="<?php echo $vehicle['listing_id']; ?>"><?php echo $vehicle['title']; ?></option>
+                            
+                      <?php
+                          } 
+                        }
+                      ?>
+                        </optgroup>
+                      </optgroup>
+
+                      <option value=""></option>
+                      <optgroup label="YEARS">
+                      <?php
+                        foreach ($years as $year) {
+                          $year_name = $year['year'];
+                          $vehicles = $listing_obj->getall_listing(false,false,"title","asc","dealer_id = 306 and year='$year_name'");
+                      ?>
+                           <optgroup label="<?php echo $year['year'] ?>">    
+                            <?php
+                              foreach ($vehicles as $vehicle) {
+                            ?>
+                              <option value="<?php echo $vehicle['listing_id']; ?>"><?php echo $vehicle['title']; ?></option>
+                            
+                      <?php
+                          } 
+                        }
+                      ?>
+                        </optgroup>
+                      </optgroup>
+                  </select>
+                  <span style="float: left; padding-left: 10px; margin-top: -5px;color:#3399FF;">*</span><div class="indicate"><input name="as_is" id="as_is" type="checkbox" value="" required>As indicated below</div> 
                  <div class="clear_data" style="float:left">
                    <a href="#" id="clr_vehicle_data" style="color:#3399FF; font-size:10px;"><em>(Clear Vehicle Data)</em></a>
-                 </div>
+                 </div> 
                </div>
                <div class="clear"></div>
                <div class="grey_box">
@@ -213,6 +334,12 @@ function addCobuyer(){
          <div class="row2">
           Fax:<br>
           <input name="v_fax" id="v_fax" type="text" class="frm89" value="801-224-1556">
+        </div>
+      </div>
+      <div class="col6">
+        Photo<br>
+        <div class="row1">
+          <img src="<?php echo $_image_url ?>" class="indeximg" alt="" width="100px" height="73px" id="vehicle_image">
         </div>
       </div>
       <div class="clear"></div>

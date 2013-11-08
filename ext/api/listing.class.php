@@ -241,7 +241,7 @@ function getall_listing($start_limit=false,$end_limit=false,$order_by=false,$sor
 			
 			
 			$result=Execute_command($sql);
-			//echo $sql;
+			
 			$a=0;
 			
 			try

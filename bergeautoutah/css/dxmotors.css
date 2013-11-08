@@ -1396,6 +1396,7 @@ header h1, header .company-details {
 	    	.part_one .select_vehicle{  height:32px; line-height:32px; font-size:14px; text-align:left; color:#606060; margin-bottom:15px; }
 	    	.part_one .select_vehicle .txt01{ float:left; padding-right:27px;}
 
+	    	.select_vehicle .vehicle{ float:left; line-height:32px; padding-right:12px; font-size:12.5px; }
 	    	.select_vehicle .indicate{ float:left; line-height:32px; padding-right:12px; font-size:12.5px; }
 	    	.select_vehicle .indicate input[type="checkbox"]{ float:left; margin-top:10px} 
 
@@ -1409,7 +1410,8 @@ header h1, header .company-details {
 	    	.grey_box .col2{ float:left; width:102px;}
 	    	.grey_box .col3{ float:left; width:75px;}
 	    	.grey_box .col4{ float:left; width:160px;}
-	    	.grey_box .col5{ float:left; width:98px;}
+	    	.grey_box .col5{ float:left; width:110px;}
+	    	.grey_box .col6{ float:left;}
 	    	.grey_box .row1{ float:left; text-align:left; margin-bottom:12px;}
 	    	.grey_box .row2{ float:left; text-align:left; margin-bottom:0px;}
 	    	.grey_box .frm111{ float:left; width:111px; height:20px; border:0px; background-color:#FFF}
