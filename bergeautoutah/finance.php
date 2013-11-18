@@ -250,15 +250,15 @@ include_once("header.php");
 <?php include_once("menu.inc.php");?>
   <div class="container_2">
    <div id="about">
-      <h2 style="font-size: 24px; margin: 0px 0px -12px 45px;">Vehicle Loan Application</h2>
+      <h2 style="font-size: 22px; margin: 0px 0px -12px 45px;">Vehicle Loan Application</h2>
       <div class="separator"></div>
-      <h3 style="margin-left: 45px; color: #3f7de0">It's Fast, Secure and Free!</h3>
+      <h3 style="font-size: 16px; margin-left: 51px; margin-top: -3px;color: #3f7de0"><em>Approval is Fast, Easy and Hassle-Free!</em></h3>
       <article>
       <section>  
         <form name="getapproved" id="getapproved" action="financeprocess.php" method="post" enctype="multipart/form-data">
           <div class="g_approved">
             <div class="g_approved_Inner">
-              <div class="g_approved_safeguard"><img src="img/ssl_secure_icon.png" alt="Comodo Positive 256  Bit Data Encryption Secured" title="Comodo Positive 256  Bit Data Encryption Secured"></div>
+              <div class="g_approved_safeguard"><img src="img/comodo_secure_icon.jpg" alt="Comodo Positive 256  Bit Data Encryption Secured" title="Comodo Positive 256  Bit Data Encryption Secured" width: 100px; height: 54px></div>
               <div class="clear"></div>
               <div class="part_one">
                 <div class="select_vehicle" style="color:#fff;">
@@ -612,12 +612,13 @@ for ($i = 1; $i <= 12; $i++) {
 </div>
 <div class="clear"></div>
 <div class="clear"></div>
+<br>
 <div class="part_two">
   <div id="gohere" tabindex='1'></div>
   <div class="complete_field" style="color:#fff;">
    <span style="display:block;height: 30px;width: 30px;text-align: center; background: #1A4782;color: #fff;font-size: 25px;font-weight: bold;">3</span>
    Additional Information  <em>(required)</em>
-  </div><br/>
+  </div><br><br>
   <div class="full_col">
   <div id="gohere" tabindex='1'></div>
   

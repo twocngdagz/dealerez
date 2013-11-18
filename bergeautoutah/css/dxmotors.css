@@ -1425,7 +1425,7 @@ header h1, header .company-details {
 
 	    	.part_two .grey_box{ font-size: 13px;}
 	    	.part_two .left_grey_box{ float:left; width:390px; padding:8px; }
-	    	.part_two .right_grey_box{ float:right; width:390px; padding:8px 8px 11px 8px;}
+	    	.part_two .right_grey_box{ float:right; width:390px; padding:8px 8px 0px 8px;}
 	    	.part_two .part_two_title{ font-size:14px; font-weight:bold; color:#1A4782; margin-bottom: 15px;padding-bottom: 5px;}
 	    	.part_two label{ float:left; width:110px; line-height:20px; text-align:left; font-size:12px;}
 	    	.part_two .frm90{ float:left; width:130px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
@@ -1456,7 +1456,7 @@ header h1, header .company-details {
 	    		margin-right:5px; 
 	    		margin-bottom:7px;
 	    	}
-	    	.part_two .full_col{ padding:8px; margin-top:10px;overflow: hidden;}
+	    	.part_two .full_col{ padding:0px 8px 8px 8px; margin-top:0px;overflow: hidden;}
 
 	    	.full_col .full_left_col{ width:390px; float:left; }
 	    	.full_col .full_right_col{  
@@ -1495,7 +1495,7 @@ header h1, header .company-details {
 
 	    	.grey_box input[type=text]{ color:#333; }
 
-	    	.g_approved_safeguard{padding-left:20px; float:right; margin-top: -40px;}
+	    	.g_approved_safeguard{padding-left:20px; float:right; margin-top: -40px; margin-right: 118px; }
 
 	    	.g_approved .part_one{ margin-top:15px; }
 

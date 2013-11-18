@@ -290,7 +290,7 @@ if(isset($_POST['submit_loan'])) {
 					<br/>
 					<strong>
 					<br /> 
-					Additional Information: 
+					Financial Information: 
 					</strong>
 					<ul>
 						<li>Checking Account: $ca</li>
@@ -300,6 +300,11 @@ if(isset($_POST['submit_loan'])) {
 						$html_downpayment
 						<li>Credit Rating: $credit_rating</li>
 						<li>Comment: $credit_comment</li>
+					</ul>
+					<strong>
+					Trade-in Information: 
+					</strong>
+					<ul>
 						<li>Vehicle Trade-in: $trade_in</li>
 						$html_trade_in_vehicle
 						<li>Owe Money in Trade-in: $owe_trade_in</li>
@@ -307,7 +312,6 @@ if(isset($_POST['submit_loan'])) {
 						<li>Trade-in Condition: $condition_trade_rating</li>
 						<li>Vin: $trade_in_vin</li>
 					</ul>
-					<br/>
 					";
 
 	if ($cobuyer) {
