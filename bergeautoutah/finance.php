@@ -47,9 +47,9 @@ include_once("header.php");
   $('#trade_in').on('change', function(e){
     var trade_in = $('#trade_in').val();
     if (trade_in == "Yes") {
-      $('#vehicle_trade_in').css('visibility', 'visible');
-      $('#owe-trade-in').css('visibility', 'visible');
-      $('#condition_trade').css('visibility', 'visible');
+      $('#vehicle_trade_in').css('display', 'block');
+      $('#owe-trade-in').css('display', 'block');
+      $('#condition_trade').css('display', 'block');
       $('#trade-in-make').attr("required","required");
       $('#trade-in-model').attr("required","required");
       $('#trade-in-year').attr("required","required");
@@ -58,9 +58,9 @@ include_once("header.php");
       $('#owe_trade_in').attr("required","required");
       $('#condition_trade_rating').attr("required","required");
     } else {
-      $('#vehicle_trade_in').css('visibility', 'hidden');
-      $('#owe-trade-in').css('visibility', 'hidden');
-      $('#condition_trade').css('visibility', 'hidden');
+      $('#vehicle_trade_in').css('display', 'none');
+      $('#owe-trade-in').css('display', 'none');
+      $('#condition_trade').css('display', 'none');
       $('#trade-in-make').removeAttr("required");
       $('#trade-in-model').removeAttr("required");
       $('#trade-in-year').removeAttr("required");
@@ -252,7 +252,7 @@ include_once("header.php");
    <div id="about">
       <h2 style="font-size: 24px; margin: 0px 0px -12px 45px;">Vehicle Loan Application</h2>
       <div class="separator"></div>
-      <h3 style="margin-left: 45px; color: #1aa2f1">It's Fast, Secure and Free!</h3>
+      <h3 style="margin-left: 45px; color: #3f7de0">It's Fast, Secure and Free!</h3>
       <article>
       <section>  
         <form name="getapproved" id="getapproved" action="financeprocess.php" method="post" enctype="multipart/form-data">
@@ -676,7 +676,7 @@ for ($i = 1; $i <= 12; $i++) {
     </div>
     <div class="clear"></div>
 
-    <div id="vehicle_trade_in" class="grey_box" style="visibility: hidden">
+    <div id="vehicle_trade_in" class="grey_box" style="display: none">
       <div class="col1">
         <div class="row1">
           Make<br>
@@ -709,7 +709,7 @@ for ($i = 1; $i <= 12; $i++) {
       </div>
     </div>
     <div class="clear"></div>
-    <div id = "owe-trade-in"style="font-size:14px; text-align:left; margin-bottom:9px;visibility: hidden">Do you owe money on trade-in?
+    <div id = "owe-trade-in"style="font-size:14px; text-align:left; margin-bottom:9px;display: none">Do you owe money on trade-in?
       <select id="owe_trade_in" name="owe_trade_in" style="width: 88px;padding-left:7px; margin: -5px 10px 0 23px;">
         <option value="">Select</option>
         <option value="Yes">Yes</option>
@@ -719,7 +719,7 @@ for ($i = 1; $i <= 12; $i++) {
       <input id="input_owe_trade" name="input_owe_trade" type="text" style="margin: -10px 0 0 10px;width: 92px">
     </div>
     <div class="clear"></div>
-    <div id = "condition_trade"style="font-size:14px; text-align:left; margin-bottom:9px;visibility: hidden">What's the condition of trade
+    <div id = "condition_trade"style="font-size:14px; text-align:left; margin-bottom:9px;display: none">What's the condition of trade
       <select id="condition_trade_rating" name="condition_trade_rating" style="padding-left:7px; margin: -5px 10px 0 43px;">
         <option value="">Select</option>
         <option value="Poor">Poor</option>
@@ -738,7 +738,7 @@ for ($i = 1; $i <= 12; $i++) {
 
 
 <div class="clear"></div>
-<br><br>
+
 <div id="cobuyer_div" style="display:none">
  <div class="complete_field" style="color:#fff;">
    <span style="display:block;height: 30px;width: 30px;text-align: center; background: #1A4782;color: #fff;font-size: 25px;font-weight: bold;">4</span>

@@ -217,13 +217,13 @@ if(isset($_POST['submit_loan'])) {
 					DealerEZ.com 
 					</div>";
 
-	$html_downpayment = ($downpayment == "Yes") ? "<li>Downpayment Amount: $downpayment_amount</li>" : "";
+	$html_downpayment = ($downpayment == "Yes") ? "<li>Downpayment Amount: $".number_format($downpayment_amount)."</li>" : "";
 	$html_trade_in_vehicle = ($trade_in == "Yes") ? "<li>Vehicle Make: $trade_in_make</li>
 						<li>Vehicle Model: $trade_in_model</li>
 						<li>Vehicle Year: $trade_in_year</li>
 						<li>Vehicle Color: $trade_in_color</li>
 						<li>Vehicle Miles: $trade_in_miles</li>" : "";
-	$html_owe_money = (($owe_trade_in == "Yes") &&  ($trade_in == "Yes")) ? "<li>Amount owe in Trade-in: $input_owe_trade</li>" : "";
+	$html_owe_money = (($owe_trade_in == "Yes") &&  ($trade_in == "Yes")) ? "<li>Amount owe in Trade-in: $".number_format($input_owe_trade)."</li>" : "";
 	$body		=	"<div>
 					Dear Dealer, <br /> <br />
 
