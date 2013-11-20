@@ -324,7 +324,7 @@ include_once("header.php");
                             	<p><strong>Stock #:</strong> <?php echo $stock_no; ?></p> 
                             	<p><strong>Warranty:</strong> </p>
                             	<p class="listing-data-finance">
-                            	    <a href="finance.php?make=<?php echo $make; ?>&model=<?php echo $model; ?>&year=<?php echo $year; ?>&vin=<?php echo $vin; ?>&price=<?php echo $price; ?>">
+                            	    <a href="finance.php?make=<?php echo $make; ?>&model=<?php echo $model; ?>&year=<?php echo $year; ?>&vin=<?php echo $vin; ?>&price=<?php echo $price; ?>&image_url=<?php echo SITE_URL.SITE_LISTING_IMAGES_PATH.$images_list[0]['image_name'] ?>">
                             	    	<strong>Apply for financing</strong>
                             	    </a>
                             	</p>

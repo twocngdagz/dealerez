@@ -1424,23 +1424,23 @@ header h1, header .company-details {
 	    	.part_two select{ font-size:12px;}
 
 	    	.part_two .grey_box{ font-size: 13px;}
-	    	.part_two .left_grey_box{ float:left; width:390px; padding:8px; }
+	    	.part_two .left_grey_box{ float:left; width:350px; padding:8px; }
 	    	.part_two .right_grey_box{ float:right; width:390px; padding:8px 8px 0px 8px;}
 	    	.part_two .part_two_title{ font-size:14px; font-weight:bold; color:#1A4782; margin-bottom: 15px;padding-bottom: 5px;}
 	    	.part_two label{ float:left; width:110px; line-height:20px; text-align:left; font-size:12px;}
-	    	.part_two .frm90{ float:left; width:130px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
-	    	.part_two .frm151{ float:left; width:267px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
-	    	.part_two .frm47{ float:left; width:21.6%; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.part_two .frm90{ float:left; width:100px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.part_two .frm151{ float:left; width:207px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.part_two .frm47{ float:left; width:40px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.part_two .frm52{ float:left; width:52px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
-	    	.part_two .frm55{ float:left; width:55px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
-	    	.part_two .frm68{ float:left; width:58px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.part_two .frm55{ float:left; width:33px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.part_two .frm68{ float:left; width:40px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.part_two .frm77{ float:left; width:77px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.part_two .frm87{ float:left; width:87px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 
 
 	    	.longtxt {
 	    		float:left;
-	    		width:267px; 
+	    		width:207px; 
 	    		height:20px; 
 	    		border:1px solid #a7a6aa; 
 	    		background-color:#FFF;
@@ -1449,7 +1449,7 @@ header h1, header .company-details {
 	    	}
 	    	.selectdate {
 	    		float:left;
-	    		width: 22.1%;
+	    		width: 66px;
 	    		height:23px; 
 	    		border:1px solid #a7a6aa; 
 	    		background-color:#FFF;
@@ -1469,7 +1469,7 @@ header h1, header .company-details {
 	    	.full_col .frm47{ float:left; width:47px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.full_col .frm53{ float:left; width:53px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.full_col .frm61{ float:left; width:61px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
-	    	.full_col .frm151{ float:left; width:267px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
+	    	.full_col .frm151{ float:left; width:207px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.full_col .frm68{ float:left; width:68px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 	    	.full_col .frm78{ float:left; width:78px; height:20px; border:1px solid #a7a6aa; background-color:#FFF; margin-right:5px; margin-bottom:7px;}
 

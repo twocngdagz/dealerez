@@ -6,16 +6,17 @@ $mysql		 = new Mysql;
 if(isset($_POST['submit_loan'])) {
 	
 	//number 1
-	$v_make		= $_POST['v_make'];
-	$vendor		= $_POST['vendor'];
-	$model		= $_POST['model'];
-	$v_city		= $_POST['v_city'];
-	$v_state	= $_POST['v_state'];
-	$vin		= $_POST['vin'];
-	$year		= $_POST['year'];
-	$v_phone	= $_POST['v_phone'];
-	$price		= $_POST['price'];
-	$v_fax		= $_POST['v_fax'];
+	$listing_id 			= $_POST['listing_id'];
+	$v_make					= $_POST['v_make'];
+	$vendor					= $_POST['vendor'];
+	$model					= $_POST['model'];
+	$v_city					= $_POST['v_city'];
+	$v_state				= $_POST['v_state'];
+	$vin					= $_POST['vin'];
+	$year					= $_POST['year'];
+	$v_phone				= $_POST['v_phone'];
+	$price					= $_POST['price'];
+	$v_fax					= $_POST['v_fax'];
 	
 	//personal info
 	$firstname 	= $_POST['fname'];
@@ -33,6 +34,7 @@ if(isset($_POST['submit_loan'])) {
 	$city 			= $_POST['city'];
 	$state	 		= $_POST['state'];
 	$zip	 		= $_POST['zip'];
+	$country		= $_POST['country'];
 	$residence_type 	= $_POST['residence_type'];
 	$time_address_year 	= $_POST['time_address_year'];
 	$time_address_months 	= $_POST['time_address_months'];
@@ -45,18 +47,34 @@ if(isset($_POST['submit_loan'])) {
 	$twe_years		= $_POST['twe_years'];
 	$twe_months		= $_POST['twe_months'];
 	$monthly_income		= $_POST['monthly_income'];
+	$other_income 		= $_POST['other_income'];
 	
 	//additional info
 	$ca		= $_POST['ca'];
 	$sa		= $_POST['sa'];
 	$cc		= $_POST['cc'];
+	$downpayment			= $_POST['downpayment'];
+	$downpayment_amount		= $_POST['downpayment_amount'];
+	$credit_rating			= $_POST['credit_rating'];
+	$credit_comment			= $_POST['credit_comment'];
+	$trade_in				= $_POST['trade_in'];
+	$trade_in_make			= $_POST['trade-in-make'];
+	$trade_in_model			= $_POST['trade-in-model'];
+	$trade_in_year			= $_POST['trade-in-year'];
+	$trade_in_color			= $_POST['trade-in-color'];
+	$trade_in_miles			= $_POST['trade-in-miles'];
+	$owe_trade_in			= $_POST['owe_trade_in'];
+	$input_owe_trade		= $_POST['input_owe_trade'];
+	$condition_trade_rating	= $_POST['condition_trade_rating'];
+	$trade_in_vin			= $_POST['condition_trade'];
 	
 	
 	/*cobuyers information*/
 	//personal info
-	$cobuyer_firstname 	= $_POST['cobuyer_fname'];
-	$cobuyer_lastname  	= $_POST['cobuyer_lname'];
-	$cobuyer_email 	   	= $_POST['cobuyer_email'];
+	$cobuyer 				= $_POST['cobuyer'];
+	$cobuyer_firstname 		= $_POST['cobuyer_fname'];
+	$cobuyer_lastname  		= $_POST['cobuyer_lname'];
+	$cobuyer_email 	   		= $_POST['cobuyer_email'];
 	$cobuyer_cellphone1 	= $_POST['cobuyer_cellphone1'];
 	$cobuyer_date_month 	= $_POST['cobuyer_date_month'];
 	$cobuyer_date_day 	= $_POST['cobuyer_date_day'];
@@ -69,6 +87,7 @@ if(isset($_POST['submit_loan'])) {
 	$cobuyer_city 			= $_POST['cobuyer_city'];
 	$cobuyer_state	 		= $_POST['cobuyer_state'];
 	$cobuyer_zip	 		= $_POST['cobuyer_zip'];
+	$cobuyer_country	 		= $_POST['cobuyer_country'];
 	$cobuyer_residence_type 	= $_POST['cobuyer_residence_type'];
 	$cobuyer_time_address_year 	= $_POST['cobuyer_time_address_year'];
 	$cobuyer_time_address_months 	= $_POST['cobuyer_time_address_months'];
@@ -81,6 +100,7 @@ if(isset($_POST['submit_loan'])) {
 	$cobuyer_twe_years		= $_POST['cobuyer_twe_years'];
 	$cobuyer_twe_months		= $_POST['cobuyer_twe_months'];
 	$cobuyer_monthly_income		= $_POST['cobuyer_monthly_income'];
+	$cobuyer_other_income		= $_POST['cobuyer_other_income'];
 	
 	//additional info
 	$cobuyer_ca		= $_POST['cobuyer_ca'];
@@ -97,11 +117,112 @@ if(isset($_POST['submit_loan'])) {
 				"Cc: support@dealerez.com" . "\r\n";
 	$subject	=	"Dixie Motors Finance Application";
 
+	$cobuyer_detail = "
+					<strong>
+					Co-buyer's Personal Information
+					</strong>
+					<br/><br/>
+					Customer Name: ".   $cobuyer_firstname." ".$cobuyer_lastname."
+					 <br />					
+					Customer Email: ".  $cobuyer_email."
+					 <br />					
+					Customer Phone: ". $cobuyer_cellphone1."
+					 <br /> 
+					Date of Birth: ". $cobuyer_bday."
+					<br />
+					Social Security No.: ". $cobuyer_ssn."
+					 <br /> 
+					 <br/>
+					<strong>
+					Co-buyer's Residential Information
+					</strong>
+					<br/><br/>
+					Address: ". $cobuyer_address."
+					<br />
+					City: ". $cobuyer_city."
+					 <br /> 
+					State: ". $cobuyer_state."
+					 <br />
+					Country: ". $cobuyer_country."
+					 <br />  
+					Zip: ". $cobuyer_zip."
+					 <br />
+					Residence Type: ". $cobuyer_residence_type."
+					 <br /> 
+					Time at Address: ". $cobuyer_time_address_year." years ".$cobuyer_time_address_months." months "."
+					 <br />
+					Monthly Payment: $". number_format($cobuyer_monthly_payment)."
+					<br/>
+					<br/>
+					
+					<strong>
+					Co-buyer's Employment Information
+					</strong>
+					<br/><br/>
+					Employer Name: ". $cobuyer_emp_name."
+					<br/>
+					Occupation: ". $cobuyer_occupation."
+					<br/>
+					Work Phone: ". $cobuyer_emp_phone1."
+					<br/>
+					Employer Zip: ". $cobuyer_emp_zip."
+					<br/>
+					Employment Type: ". $cobuyer_emp_type."
+					<br/>
+					Time with Employer: ". $cobuyer_twe_years." years ".$cobuyer_twe_months." months "."
+					<br/>
+					Monthly Income: $".number_format($cobuyer_monthly_income)."
+					<br/>
+					Other Income: $".number_format($cobuyer_other_income)."
+					<br/>
+					<strong>
+					<br /> 
+					Co-buyer's Additional Information: 
+					</strong>
+					<ul>
+						<li>Checking Account: $cobuyer_ca</li>
+						<li>Saving Account: $cobuyer_sa</li>
+						<li>Credit Card: $cobuyer_cc</li>
+					</ul>
+					";
 	
-	$body		=	"<html><body>
+	$vehicle_info = "
+					<strong>
+					Vehicle Information
+					<br /><br />
+					<a href='http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id' target='_blank'>http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id</a>
+					</strong>
+						<ul>
+							<li>Year: $year</li>
+							<li>Make: $v_make</li>
+							<li>Model: $model</li>
+							<li>Price: $price</li>
+							<li>Vendor: $vendor</li>
+							<li>Vin: $vin</li>
+							<li>City: $v_city</li>
+							<li>State: $v_state</li>
+							<li>Phone: $v_phone</li>
+							<li>Fax: $v_fax</li>
+						</ul>
+
+					We wish you success in your follow-up of this potential sale.
+					 <br />
+					 <br />
+					Support @
+					<br />
+					DealerEZ.com 
+					</div>";
+	$html_downpayment = ($downpayment == "Yes") ? "<li>Downpayment Amount: $".number_format($downpayment_amount)."</li>" : "";
+	$html_trade_in_vehicle = ($trade_in == "Yes") ? "<li>Vehicle Make: $trade_in_make</li>
+						<li>Vehicle Model: $trade_in_model</li>
+						<li>Vehicle Year: $trade_in_year</li>
+						<li>Vehicle Color: $trade_in_color</li>
+						<li>Vehicle Miles: $trade_in_miles</li>" : "";
+	$html_owe_money = (($owe_trade_in == "Yes") &&  ($trade_in == "Yes")) ? "<li>Amount owe in Trade-in: $".number_format($input_owe_trade)."</li>" : "";
+	$body		=	"<div>
 					Dear Dealer, <br /> <br />
 
-					We pleased to present you following Auto Loan Application from our www.dixiemotors.com website.
+					We are pleased to present you following Vehicle Loan Application from website <a href='http://www.dixiemotors.com' target='_blank'>www.dixiemotors.com</a>
 					<br />
 					<br/>
 					<br />
@@ -130,13 +251,15 @@ if(isset($_POST['submit_loan'])) {
 					 <br /> 
 					State: ". $state."
 					 <br /> 
+					Country: ". $country."
+					 <br /> 
 					Zip: ". $zip."
 					 <br />
 					Residence Type: ". $residence_type."
 					 <br /> 
-					Time at Address: ". $time_address_year." ".$time_address_months."
+					Time at Address: ". $time_address_year." years ".$time_address_months." months "."
 					 <br />
-					Monthly Payment: ". $monthly_payment."
+					Monthly Payment: $". number_format($monthly_payment)."
 					<br/>
 					<br/>
 					
@@ -154,115 +277,46 @@ if(isset($_POST['submit_loan'])) {
 					<br/>
 					Employmnet Type: ". $emp_type."
 					<br/>
-					Time with Employer: ". $twe_years." ".$twe_months."
+					Time with Employer: ". $twe_years." years ".$twe_months." months "."
 					<br/>
-					Monthly Income: ".$monthly_income."
+					Monthly Income: $".number_format($monthly_income)."
 					<br/>
-					<strong>
-					<br /> 
-					Additional Information: 
-					</strong>
-					<ul>
-						<li><strong>Checking Account: </strong>$ca</li>
-						<li><strong>Saving Account: </strong>$sa</li>
-						<li><strong>Credit Card: </strong>$cc</li>
-					</ul>
-					
-					<strong>
-					Cobuyer's Personal Information
-					</strong>
-					<br/><br/>
-					Customer Name: ".   $cobuyers_firstname." ".$cobuyers_lastname."
-					 <br />					
-					Customer Email: ".  $cobuyers_email."
-					 <br />					
-					Customer Phone: ". $cobuyers_cellphone1."
-					 <br /> 
-					Date of Birth: ". $cobuyers_bday."
-					<br />
-					Social Security No.: ". $cobuyers_ssn."
-					 <br /> 
-					 <br/>
-					<strong>
-					Cobuyer's Residential Information
-					</strong>
-					<br/><br/>
-					Address: ". $cobuyers_address."
-					<br />
-					City: ". $cobuyers_city."
-					 <br /> 
-					State: ". $cobuyers_state."
-					 <br /> 
-					Zip: ". $cobuyers_zip."
-					 <br />
-					Residence Type: ". $cobuyers_residence_type."
-					 <br /> 
-					Time at Address: ". $cobuyers_time_address_year." ".$cobuyers_time_address_months."
-					 <br />
-					Monthly Payment: ". $cobuyers_monthly_payment."
-					<br/>
-					<br/>
-					
-					<strong>
-					Cobuyer's Employment Information
-					</strong>
-					<br/><br/>
-					Employer Name: ". $cobuyers_emp_name."
-					<br/>
-					Occupation: ". $cobuyers_occupation."
-					<br/>
-					Work Phone: ". $cobuyers_emp_phone1."
-					<br/>
-					Employer Zip: ". $cobuyers_emp_zip."
-					<br/>
-					Employmnet Type: ". $cobuyers_emp_type."
-					<br/>
-					Time with Employer: ". $cobuyers_twe_years." ".$cobuyers_twe_months."
-					<br/>
-					Monthly Income: ".$cobuyers_monthly_income."
+					Other Income: $".number_format($other_income)."
 					<br/>
 					<strong>
 					<br /> 
-					Cobuyer's Additional Information: 
+					Financial Information: 
 					</strong>
 					<ul>
-						<li><strong>Checking Account: </strong>$cobuyers_ca</li>
-						<li><strong>Saving Account: </strong>$cobuyers_sa</li>
-						<li><strong>Credit Card: </strong>$cobuyers_cc</li>
+						<li>Checking Account: $ca</li>
+						<li>Saving Account: $sa</li>
+						<li>Credit Card: $cc</li>
+						<li>Downpayment: $downpayment</li>
+						$html_downpayment
+						<li>Credit Rating: $credit_rating</li>
+						<li>Comment: $credit_comment</li>
 					</ul>
-					
 					<strong>
-					Vehicle Information
+					Trade-in Information: 
 					</strong>
-						<ul>
-							<li><strong>Year: </strong>$year</li>
-							<li><strong>Make: </strong>$v_make</li>
-							<li><strong>Model: </strong>$model</li>
-							<li><strong>Price: </strong>$ $price</li>
-							<li><strong>Vendor: </strong>$vendor</li>
-							<li><strong>Vin: </strong>$infovin</li>
-							<li><strong>City: </strong>$v_city</li>
-							<li><strong>State: </strong>$v_state</li>
-							<li><strong>Phone: </strong>$v_phone</li>
-							<li><strong>Fax: </strong>$v_fax</li>
-						</ul>
+					<ul>
+						<li>Vehicle Trade-in: $trade_in</li>
+						$html_trade_in_vehicle
+						<li>Owe Money in Trade-in: $owe_trade_in</li>
+						$html_owe_money
+						<li>Trade-in Condition: $condition_trade_rating</li>
+						<li>Vin: $trade_in_vin</li>
+					</ul>
+					";
 
-					We trust you will provide a good follow-up service and reply to this email with a final report status.
-					 <br /> <br />
-					 
-					
-					Sincere best wishes for your success!
-					 <br />
-					 <br />
-					
-					Support
-					<br />
-					Dixiemotors.com
-					</body></html>";
-
+	if ($cobuyer) {
+		$body = $body.$cobuyer_detail.$vehicle_info;
+	} else {
+		$body = $body.$vehicle_info;
+	}
 	
 	
-	smail($to, $subject, $body, $headers);	
+	@mail($to, $subject, $body, $headers);	
 	$_SESSION['msg_alert']="Auto Loan Application successfully sent!";	
 	msgbox("Auto Loan Application successfully sent!");
 }

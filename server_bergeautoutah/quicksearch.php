@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dixie Motors Utah</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<script>
+$(function() {
+   	var x = $('#close');
+	var $this = $(this);
+	
+	$('#close').on('mouseover', function() {
+		$this.css("opacity","0.5");
+	});
+	x.on('click', function() {
+		$('#quicksearch-wrapper').fadeOut(300);
+	});
+  });
+</script>
+
+</head>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;	
+}
+#quicksearch-wrapper {
+	border: 3px solid #266e94;
+	border-radius: 3px;
+	width: 734px;
+	height: 239px;	
+	overflow: hidden;
+	position: relative;
+}
+#quicksearch-wrapper .cols {
+	float: left;
+	margin-left: 6px;
+}
+	.c-1 {
+		width: 31%;
+		padding-left: 14px;
+	}	
+	.c-2 {
+		width: 20%;
+		padding-left: 5%;
+	}	
+	.c-3 {
+		float: right !important;
+		width: 38%;
+	}
+.cols h2 {
+	color: #266e94;	
+	padding: 8px 0 15px;
+	font-size: 14px;
+}
+.cols-data ul li a {
+	color: #0077cc;
+	font-size: 13px;
+		
+}
+.c-3 label {
+	color: #000;
+	font-size: 13px;
+	font-weight: bold;	
+	display: block;
+	margin-top: 4px;
+	padding: 1px 0;
+}
+#lblfirst {
+	margin-top: 0;	
+	padding: 0;
+}
+.qs-select {
+	border: 1px solid #CCC;
+	padding: 1px;
+	width: 80px;
+}
+	#transmission {
+		width: 184px;	
+		margin-bottom: 9px;
+	}
+p.center-text {
+	width: 15px !important;	
+	font-size: 13px;
+	font-weight: bold;
+	display: inline-block;
+	padding-top: 4px;
+}
+.cols-data ul li {
+	padding: 1px;	
+}
+#bottoms {
+	overflow: hidden;
+}	
+#bottoms span {
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 1px;
+	position: absolute;
+}
+#bottoms label {
+	float: left;
+	margin-top: 0;
+}	
+#bottoms input[type=submit] {
+	float: right;
+	margin-right: 14px;	
+}
+#close {
+	background: url(img/close.jpg) no-repeat top right;
+	display: block;
+	width: 27px;
+	height: 26px;
+	position: absolute;
+	top:10px;
+	right: 10px;	
+	text-indent: -9999px;
+	cursor: pointer;
+}
+</style>
+<body>
+<div id="quicksearch-wrapper">
+	<div class="cols c-1">
+        <h2>Style</h2>
+        <div class="cols-data">
+        	<img src="img/vehicletype.jpg" width="225" height="171" alt="Vehicle Type Search" style="position: absolute;">
+            <ul>
+            	<li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+                <li><a href="#"></a>CAR</li>
+            </ul>
+        </div>
+    </div><!-- end cols -->  
+    
+    <div class="cols c-2">
+        <h2>Price</h2>
+        <div class="cols-data">
+        	<ul>
+            	<li><a href="">Less Than $5,000</a></li>
+                <li><a href="">Less Than $10,000</a></li>
+                <li><a href="">Less Than $15,000</a></li>
+                <li><a href="">Less Than $20,000</a></li>
+                <li><a href="">Less Than $25,000</a></li>
+                <li><a href="">Less Than $30,000</a></li>
+                <li><a href="">Less Than $35,000</a></li>
+                <li><a href="">More Than $35,000</a></li>
+            </ul>
+        </div>
+    </div><!-- end cols -->  
+    
+    <div class="cols c-3">
+        <h2>Other</h2>
+        <div class="cols-data">
+        	<label id="lblfirst">Mileage</label>
+            <select class="qs-select" name="mileagefrom" id="mileagefrom">
+            	<option>Any</option>
+            </select>
+            <p class="center-text">To</p>
+            <select class="qs-select" name="mileageto" id="mileageto">
+            	<option>Any</option>
+            </select>
+           
+           <br />
+           
+            <label>Year</label>
+            <select class="qs-select" name="yearfrom" id="yearfrom">
+            	<option>Any</option>
+            </select>
+            <p class="center-text">To</p>
+            <select class="qs-select" name="yearto" id="yearto">
+            	<option>Any</option>
+            </select>
+            
+           <br />
+           
+            <label>Transmission</label>
+            <select class="qs-select" name="transmission" id="transmission">
+            	<option>Show me all</option>
+            </select>
+            
+            <div id="bottoms">
+            	<label>Condition</label>
+                <input type="checkbox" name="used" id="used" checked="checked" >
+                <span>Used</span>
+                <input type="submit" name="submit" id="submit" value="Search">
+            </div>
+        </div>
+            <span id="close">x</span>
+    </div><!-- end cols -->  
+
+</div>
+</body>
+</html>

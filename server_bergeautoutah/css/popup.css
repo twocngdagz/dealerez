@@ -1,0 +1,197 @@
+body { 
+	background: #000;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a {
+	color: #fff;	
+	text-decoration: none;
+}
+h1 {
+	color: #0092cc;	
+}
+#wrapper-popup {
+	background: #1f1f1f;
+	width: 620px;
+	margin: 20px auto;
+	overflow: hidden;
+	padding: 5px;
+}
+	#wrapper-popup h1 {
+		background: #000;
+		border: 2px solid #2f2d2d;
+		border-radius: 10px;
+		margin: 0 auto;
+		padding: 5px 10px;
+		font-size: 20px;
+	}
+#main-popup {
+	border-radius: 14px;
+	background: #000;
+	overflow: hidden;
+	margin-top: 10px;
+	border: 2px solid #2f2d2d;
+	clear: both;
+}
+	#main-popup nav {
+		border-radius: 10px 0 0 0;
+		background: #2f2d2d;	
+		float: left;
+		width: 23%;
+		overflow: hidden;
+		height: auto;
+	}
+	#main-popup nav ul li {
+		font-size: 12px;
+		font-weight: bold;
+		height: 30px;
+	}
+	#main-popup nav ul li a:hover{
+		background: #000;
+		color: #0092d9;
+	}
+	#main-popup nav ul li:first-child {
+		border-radius: 10px 0 0 0;
+	}
+	#main-popup a {
+		padding: 8px 10px;
+		display: block;
+	}
+.active a {
+	background: #000;	
+	color: #0092d9 !important;
+}
+.separator {
+	border-bottom: 1px dashed #333333;	
+}
+.clear {
+	clear: both;	
+}
+.input-inline {
+	padding: 10px 0;
+}
+.input-inline label {
+	line-height: 1.8em;
+}
+#container {
+	float: right;
+	padding: 10px 4px;
+	overflow: hidden;	
+	width: 75%;
+}
+#container #request-more-info {
+	
+}
+	.vehicle-details {
+		overflow: hidden;
+	}
+		.vehicle-details p {
+			margin-left: 132px;
+		}
+		.vehicle-name {
+			font-weight: bold;
+			font-size: 16px;	
+		}
+		.vehicle-desc,
+		.vehicle-miles {
+			font-weight: normal;	
+			font-size: small;
+		}
+		.vehicle-miles {
+			padding-top: 17px;	
+		}
+		.vehicle-asking-price {
+			color: #0092cc;	
+			font-weight: bold;
+			font-size: 13px;
+		}
+	.vehicle-details img {
+		border: 1px solid #ccc;
+		float: left;
+		height: 85px;
+		width: 120px;
+	}
+#form-request-info {
+
+}
+textarea {
+	margin-top: 10px;
+	width: 98%;
+	font-size: 13px;
+	height: 75px;
+	font-family: inherit;
+}
+label {
+	font-size: 13px;	
+}
+label span {
+	color: #0092CC;	
+}
+select, input {
+	border: medium none;
+	padding: 2px;
+	color: #666;
+}
+input[type=text]:hover,input[type=text]:focus {
+
+}
+select#purchase-timing {
+	width: 180px;	
+}
+input[type=submit] {
+	background: #0092cc;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 6px;
+	font-size: 12px;
+	padding: 4px 8px;
+	margin-left: 200px;
+	cursor: pointer;
+}
+input[type=submit]:hover {
+	background: #333333;
+	color: #fff;
+}
+.cols-2 {
+	width: 98%;	
+	overflow: hidden;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+	.cols-2 div {
+		float: left;
+		width: 46%;	
+	}
+	.cols-2 div input {
+		width: 190px;
+		padding: 3px 6px;
+	}
+	.cols-2 div select {
+		width:  202px;
+	}
+.cols-1 div {	
+	margin-bottom: 7px;
+}
+	.cols-1 input {
+		width: 400px;	
+		padding: 3px 6px;
+	}
+p span {
+	color: 	#0092CC;
+}
+p.required {
+	font-size: xx-small;	
+}
+	input.error { border: 1px dotted red; }
+	form.frmTrade label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-style: italic
+	}
+	div.error { display: none; }
+	input.checkbox { border: none }
+	input.error { border: 1px dotted red; }
+	label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red !important;
+	font-style: italic

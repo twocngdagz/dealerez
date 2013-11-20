@@ -664,7 +664,7 @@ for ($i = 1; $i <= 12; $i++) {
         <option value="Excellent">Excellent</option>
       </select>
       Comments
-      <textarea name="credit_comment"rows="1" style="position: relative; top: -4px"></textarea>
+      <textarea name="credit_comment"rows="1" style="position: relative;"></textarea>
     </div>
     <div class="clear"></div>
     <div style="font-size:14px; text-align:left; margin-bottom:9px;">Do you have a vehicle trade-in?
@@ -861,7 +861,7 @@ for ($i = 1; $i <= 12; $i++) {
 ?>
 </select>
 <div class="clear"></div>
-<label>Monthly Payment $</label><input name="cobuyer_monthly_payment" id="cobuyer_monthly_payment" type="text" class="frm55">
+<label>Monthly Payment $</label><input name="cobuyer_monthly_payment" id="cobuyer_monthly_payment" type="text" class="frm68">
 </div>
 <div class="clear"></div>
 <div class="full_col">
