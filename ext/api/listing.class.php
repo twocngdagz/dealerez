@@ -184,7 +184,7 @@ function getSimilarVehicle($user_id=false,$vehicle,$lid) {
 		else {
 			$sql = "select * from listing where make = '$vehicle' and listing_id <> $lid";
 		}
-		//echo $sql;
+
 		$result=Execute_command($sql);
 			//echo $sql;
 			$a=0;
@@ -548,17 +548,42 @@ function get_feature_listing($user_id)
 			
 			$a=0;
 			
-			try
-			{		while($record=mysql_fetch_array($result))
-					{
+			try {		
+				while($record=mysql_fetch_array($result)) {
 						$result_info[$a]=$record;
 						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
 						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); //ADDED 2-21-2013
 						$a++;	
 					}
 			}
-			catch(Exception $e)
-			{
+			catch(Exception $e) {
+				$_SESSION['mysql_eror']=$result;
+			}
+	}
+
+	return $result_info;
+
+}
+
+function get_feature_listing2($user_id)
+{	$result_info=array();
+	
+	if($user_id)
+	{
+			$sql="select * from listing where dealer_id=$user_id and is_featured=1 order by Rand() ";
+			$result=Execute_command($sql);
+			
+			$a=0;
+			
+			try {		
+				while($record=mysql_fetch_array($result)) {
+						$result_info[$a]=$record;
+						$result_info[$a]['images_array']=$this->get_listing_images($record['listing_id']);
+						$result_info[$a]['image_name']  = $this->get_listing_image_name($record['listing_id']); //ADDED 2-21-2013
+						$a++;	
+					}
+			}
+			catch(Exception $e) {
 				$_SESSION['mysql_eror']=$result;
 			}
 	}
@@ -879,7 +904,7 @@ function get_listing_images($listing_id,$limit = false)
 
 }
 function get_img_name($listing_id) {
-		$sql_img = mysql_query("select image_name from listing_images where listing_id=$listing_id limit 1");
+		$sql_img = mysql_query("select image_name from listing_images where listing_id=$listing_id order by display_order limit 1");
 		$row_img = mysql_result($sql_img,0);
 		return $row_img;
 }

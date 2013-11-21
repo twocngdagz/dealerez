@@ -1,0 +1,49 @@
+.pageOn {
+	background: #CCC;
+	/*border:		1px solid #369;*/
+	
+	padding: 1px;
+	margin-right: 1px;
+	/*border: 1px solid navy;*/
+	font-weight: bold;
+	background-color: #2e6ab1;
+	color:#FFF;
+	
+}
+
+.pageOff {
+/*	background: #EEE;*/
+	/*border:		1px solid #369;*/
+	margin:		1px;
+	padding:	1px;
+	
+}
+
+.pageOff a:hover {
+	/*background:	#DDD;*/
+	cursor: pointer;
+	color:#000;
+	
+}
+.pageOff a {
+	color: #03629A;
+	text-decoration: none;
+	padding:1px;
+}
+
+.paginationSelect {
+	background: #EEE;
+}
+
+.paginationErrors {
+	clear:			both;
+	text-align:		left;
+	/*border:			2px dashed #D90;*/
+	color:			#A40;
+	background:		#FD9;
+	padding:		10px;
+	width:			70%;
+	margin:			auto;
+	margin-top:		40px;
+	margin-bottom:	40px;
+}

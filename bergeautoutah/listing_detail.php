@@ -46,14 +46,13 @@ $counter    = 0;
 $getData = $listing_obj->get_user_details($lid);
 $user_comments 	= $getData['user_comments'];
 $dealer_id  	= $getData['dealer_id'];
-		
-$sql = mysql_query("select * from users where user_id = $dealer_id");
+
+$sql = mysql_query("select * from users where dealer_id = $dealer_id");
 $row = mysql_fetch_array($sql);
 $dealer_name 	= $row['name'];
 $phone   	= $row['phone'];
 
 $user_detail = $user_details->get_user_detail($uid);
-		
 $sm = $listing_obj->getSimilarVehicle($uid,$make,$lid); // FOR SIMILAR VEHICLES
 		
 define("DEALER_ADDRESS",$user_detail['address']);

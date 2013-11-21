@@ -1,0 +1,23 @@
+[28-Sep-2013 13:54:43] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'dealerez'@'localhost' (using password: NO) in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:54:43] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:54:43] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 17
+[28-Sep-2013 13:54:43] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 18
+[28-Sep-2013 13:54:43] PHP Fatal error:  Call to a member function get_all_makes() on a non-object in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 199
+[28-Sep-2013 13:55:22] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'dealerez'@'localhost' (using password: NO) in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:55:22] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:55:22] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 17
+[28-Sep-2013 13:55:22] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 18
+[28-Sep-2013 13:55:22] PHP Fatal error:  Call to a member function get_all_makes() on a non-object in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 199
+[28-Sep-2013 13:58:46] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'dealerez'@'localhost' (using password: NO) in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:58:46] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 16
+[28-Sep-2013 13:58:46] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 17
+[28-Sep-2013 13:58:46] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 18
+[28-Sep-2013 13:58:46] PHP Fatal error:  Call to a member function get_all_makes() on a non-object in /home/dealerez/public_html/Domains/Hotbuycars.com/index-cars_tab.php on line 199
+[07-Oct-2013 00:43:52] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:43:52] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:48:07] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:48:07] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:48:24] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:48:24] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:49:36] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383
+[07-Oct-2013 00:49:36] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/dealerez/public_html/sandbox/ext/api/listing.class.php on line 383

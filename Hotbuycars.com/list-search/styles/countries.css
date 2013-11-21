@@ -1,0 +1,292 @@
+body{ font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.sites .header{
+   width: 70%;
+   left: 25%
+   clear: both;
+   float: left;
+   position: relative;
+   border-bottom: #000 1px solid;
+}
+.sites .colmask{
+   width: 90%;
+   left: 5%;
+   margin-top: -10px;
+}
+.sites .colmid{ right: 25% }
+.sites .colin{ right: 25% }
+.sites .colleft{ right: 25% }
+.sites .box_1{
+   width: 23%;
+   left: 77%;
+}
+.sites .box_2{
+   width: 23%;
+   left: 79%;
+}
+.sites .box_3{
+   width: 23%;
+   left: 80%;
+}
+.sites .box_4{
+   width: 23%;
+   left: 82%;
+}
+.sites .footer{
+   width: 50%;
+   left: 25%;
+}
+.sites .colmask{
+   clear: both;
+   float: left;
+   /*overflow: hidden;*/
+   position: relative;
+}
+.sites .colmid{
+   float: left;
+   width: 100%;
+   position: relative;
+}
+.sites .colin{
+   float: left;
+   width: 100%;
+   position: relative;
+}
+.sites .colleft{
+   float: left;
+   width: 100%;
+   position: relative;
+}
+.sites .box_1{
+   padding: 0px 0px 1em 0px;
+   overflow: hidden;
+   float: left;
+   position: relative;
+}
+.sites .box_2{
+   padding: 0px 0px 1em 0px;
+   overflow: hidden;
+   float: left;
+   position: relative;
+}
+.sites .box_3{
+   padding: 0px 0px 1em 0px;
+   overflow: hidden;
+   float: left;
+   position: relative;
+}
+.sites .box_4{
+   padding: 0px 0px 1em 0px;
+   overflow: hidden;
+   float: left;
+   position: relative;
+}
+.sites .footer{
+   clear: both;
+   float: left;
+   position: relative;
+   border-bottom: #000 1px solid;
+}
+.sites .bottom{
+   clear: both;
+   width: 100%;
+   float: left;
+   position: relative;
+}
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left:0px;
+  text-indent: 0px;
+}
+ul  li{ margin:0px; padding:0px;
+}
+ul .states {
+  background-color: #F4F4F4;
+}
+a {
+  font-family: sans-serif; color:#006699
+}   
+.sites #moo ul li:before {
+  content: "\00BB \0020";
+  }
+.sites #logo  {
+  font-size: 700%;
+  color: #551A8B;
+  text-align: center;
+  font-weight: 500;
+  font-family: serif;
+  font-stretch: expanded;
+  padding: 1px 0px 10px 2px;
+  width: 100%;
+} 
+.sites #suggest_form  {
+  position: relative;
+  float: right;
+} 
+.sites form#suggest {
+  position:relative;
+}
+.sites div#new_city_label {
+  position:absolute;
+  float:right;
+  margin-right:3px;
+}
+.sites input#newarea-field {
+  width:10em;
+}
+.sites label.overlabel {
+  position:absolute;
+  top:3px;
+  left:5px;
+  z-index:1;
+  color:#999;
+}
+.sites a       {text-decoration: none}
+.sites a:hover {text-decoration: underline; color: #000;}
+
+.sites h1 {
+  border-bottom: 1px solid #eaeaea;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 31px;
+  font-weight: 500;
+} 
+.sites div.state_delimiter {
+  -webkit-box-shadow: 0 -1px 0 #ddd;
+  -moz-box-shadow: 0 -1px 0 #ddd;
+  text-align: left;
+  box-shadow: 0 -1px 0 #ddd;
+  border-top: 1px solid #fff;
+  padding: 10px 0 0px 0px; font-weight:bold; font-size:14px; color:#666666
+} 
+.sites {
+   border-width: 0px;
+   padding: 0px;
+   margin: 0px;
+   font-size: 80%;
+   width: 100%;
+   min-width: 600px;
+   white-space: nowrap;
+}
+.sites div.jump_to_continents {
+  margin: 10px auto;
+  clear: both;
+  display: block;
+  list-style-type: none;
+  padding: 10px 0;
+  text-align: center;
+} 
+.sites div.jump_to_continents a {
+  margin: 0 15px 0 0;
+  font-size: 14px;
+}
+.sites div.footer {
+  margin: 20px auto;
+  clear: both;
+  display: block;
+  list-style-type: none;
+  padding: 20px 0;
+  text-align: center;
+}
+.sites div.footer  a, div.footer span {
+  margin: 0 20px 0 0;
+  font-size: 11px;
+}
+/* mobile view */
+.sites.mobile {
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+}
+.sites.mobile .jump_to_continents,
+.sites.mobile #header { display: none; }
+.sites.mobile .topban {
+	font-size: 16px;
+	font-family: sans-serif;
+	height: 2em;
+	background: #eee;
+	padding: 3px;
+	border-bottom: 1px solid #ddd;
+}
+.sites.mobile .h1 {
+	font-family: sans-serif;
+	border: 1px solid;
+	font-size: 16px;
+}
+.sites.mobile .colmask {
+	width: 100%;
+	left: 0;
+	float: none;
+	display: none;
+}
+.sites.mobile .box_1 {
+	left: 0;
+	clear: both;
+	width: 100%;
+}
+.sites.mobile .colmid,
+.sites.mobile .colleft,
+.sites.mobile ul,
+.sites.mobile .box_2,
+.sites.mobile .box_3,
+.sites.mobile .box_4 { display: none; }
+.sites.mobile .continent_header,
+.sites.mobile .state_delimiter {
+	cursor: pointer;
+	background: #eee;
+	padding: 2px;
+	border: 1px solid #ddd;
+	border-left: 0;
+	border-right: 0;
+	font-size: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.sites.mobile .state_delimiter {
+	margin-left: 1em;
+	margin-bottom: 2px;
+}
+.sites.mobile li>a { font-size: 20px; }
+
+.sites.mobile .footer {
+	float: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	white-space: normal;
+}
+/***************
+ FORMAT SELECTOR
+ ***************/
+.sites #fmtsel {
+	width: 100%;
+	text-align: center;
+	color: #444;
+	clear: both;
+	padding: 0;
+}
+.sites #fmtsel b { font-size: x-small; }
+.sites #fmtsel li {
+	margin-left: 4px;
+	margin-right: 4px;
+	font-weight: bold;
+	cursor: default;
+	display: inline;
+}
+.sites #fmtsel li.fsel {
+	font-size: smaller;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 2px;
+}
+.sites #fmtsel li.fsel.a {
+	font-weight: normal;
+	border: 0;
+	cursor: pointer;
+	color: blue;
+}
+.sites #fmtsel li.fsel.a:hover {
+	background: #ddd;
+}
+
+.top_title{font-size:13px; color: #999; margin-top:25px;}
