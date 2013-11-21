@@ -290,57 +290,6 @@ if((getQueryVariable('image_url')) == -1) {
                   ?>
                     </optgroup>
                   </optgroup>
-                  <option value=""></option>
-                  <optgroup label="MODELS">
-                    <?php
-                      foreach ($models as $model) {
-                          $model_name = $model['model'];
-                          $vehicles   = $listing_obj->getall_listing(false, false, "title", "asc", "dealer_id = 348 and model='$model_name'");
-                      ?>
-                        <optgroup label="<?php
-                          echo $model['model'];
-                      ?>">    
-                                              <?php
-                          foreach ($vehicles as $vehicle) {
-                      ?>
-                                                <option value="<?php
-                              echo $vehicle['listing_id'];
-                      ?>"><?php
-                              echo $vehicle['title'];
-                      ?></option>
-
-                                                <?php
-                          }
-                      }
-                    ?>
-                    </optgroup>
-                  </optgroup>
-
-                  <option value=""></option>
-                  <optgroup label="YEARS">
-                    <?php
-                      foreach ($years as $year) {
-                          $year_name = $year['year'];
-                          $vehicles  = $listing_obj->getall_listing(false, false, "title", "asc", "dealer_id = 348 and year='$year_name'");
-                      ?>
-                                            <optgroup label="<?php
-                          echo $year['year'];
-                      ?>">    
-                                              <?php
-                          foreach ($vehicles as $vehicle) {
-                      ?>
-                                                <option value="<?php
-                              echo $vehicle['listing_id'];
-                      ?>"><?php
-                              echo $vehicle['title'];
-                      ?></option>
-
-                                                <?php
-                          }
-                      }
-                    ?>
-                    </optgroup>
-                  </optgroup>
                 </select>
                 <span style="float: left; padding-left: 10px; margin-top: -5px;color:#3399FF;">*</span>
                                     <div class="indicate"><input name="as_is" id="as_is" type="checkbox" value="" required>Correct as indicated below</div> 

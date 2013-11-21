@@ -110,12 +110,28 @@ if(isset($_POST['submit_loan'])) {
 	$agree		= $_POST['agree'];
 	
 	//send mail
-	$from		=	"info@dixiemotors.com";
-	$to		=	"labrums@yahoo.com";
-	$headers	= 	"From: info@dixiemotors.com" . "\r\n" .
-				"Reply-To: labrums@yahoo.com " . "\r\n" .
-				"Cc: support@dealerez.com" . "\r\n";
-	$subject	=	"Dixie Motors Finance Application";
+	// $from		=	"info@dixiemotors.com";
+	// $to		=	"labrums@yahoo.com";
+	// $headers	= 	"From: info@dixiemotors.com" . "\r\n" .
+	// 			"Reply-To: labrums@yahoo.com " . "\r\n" .
+	// 			"Cc: support@dealerez.com" . "\r\n";
+	// $subject	=	"Dixie Motors Finance Application";
+
+	// $to 		= "twocngdagz@yahoo.com";
+	// $headers	= 'MIME-Version: 1.0' . "\r\n";
+ //    $headers  	.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	// $headers	.= "From: <roy.beldia@gmail.com>" . "\r\n";
+	// $headers	.= "Reply-To: <roy.beldia@gmail.com>" . "\r\n";
+	// $headers	.= "Cc: <glenn@impactsources.com>" . "\r\n";
+	// $subject	= "Dixie Auto Finance Application";
+
+	$to 		= "labrums@yahoo.com";
+	$headers	= 'MIME-Version: 1.0' . "\r\n";
+    $headers  	.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers	.= "From: <info@dixiemotors.com>" . "\r\n";
+	$headers	.= "Reply-To: <labrums@yahoo.com>" . "\r\n";
+	$headers	.= "Cc: <support@dealerez.com>" . "\r\n";
+	$subject	= "Dixie Auto Finance Application";
 
 	$cobuyer_detail = "
 					<strong>
@@ -190,7 +206,7 @@ if(isset($_POST['submit_loan'])) {
 					<strong>
 					Vehicle Information
 					<br /><br />
-					<a href='http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id' target='_blank'>http://www.bergeautoutah.dealerez.com/listing_detail.php?lid=$listing_id</a>
+					<a href='http://www.dixiemotorsutah.com/listing_detail.php?lid=$listing_id' target='_blank'>http://www.dixiemotorsutah.com/listing_detail.php?lid=$listing_id</a>
 					</strong>
 						<ul>
 							<li>Year: $year</li>

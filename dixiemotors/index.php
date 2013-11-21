@@ -32,118 +32,117 @@ $user_id  = 349;
                 
                 <div class="image-slider">
                 	<div id="quicksearch-wrapper" style="display:none;">
-                    <div class="cols c-1" style="width:80px;">
-                        <h2>Make</h2>
-                        <div class="cols-data">
-                        	<!--column 1-->
-                               	<ul>
-                                <?php 
-                                	//$makes = $listing_obj->getListingsGroupBy(false,false,"make","asc","user_id=$user_id","make");
-                                	$makes = $listing_obj->getListingsGroupBy(0,8,"make","asc","user_id=$user_id","make");
-                                	foreach($makes as $newmakes) {
-                                		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and user_id = $user_id");
-                                ?>
-                                	<li><a href="listings.php?make=<?php echo $newmakes['make'];?>"><?php echo $newmakes['make']." (".mysql_num_rows($count).")"; ?></a></li>
-                                <?php } ?>
-                                </ul>
-                        	
-                        </div>
-                    </div><!-- end cols -->  
-                    <div class="cols c-1" style="width:80px;padding-top:17px;">
-                        <h2></h2>
-                        <div class="cols-data">
-                        	<!--column 2-->
-                               	<ul>
-                                <?php 
-                                	$makes = $listing_obj->getListingsGroupBy(8,8,"make","asc","user_id=$user_id","make");
-                                	foreach($makes as $newmakes) {
-                                		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and user_id = $user_id");
-                                ?>
-                                	<li><a href="listings.php?make=<?php echo $newmakes['make'];?>"><?php echo $newmakes['make']." (".mysql_num_rows($count).")"; ?></a></li>
-                                <?php } ?>
-                                </ul>
-                        	
-                        </div>
-                    </div><!-- end cols -->  
+                        <div class="cols c-1" style="width:80px;">
+                            <h2>Make</h2>
+                            <div class="cols-data">
+                            	<!--column 1-->
+                                   	<ul>
+                                    <?php 
+                                    	//$makes = $listing_obj->getListingsGroupBy(false,false,"make","asc","user_id=$user_id","make");
+                                    	$makes = $listing_obj->getListingsGroupBy(0,8,"make","asc","user_id=$user_id","make");
+                                    	foreach($makes as $newmakes) {
+                                    		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and user_id = $user_id");
+                                    ?>
+                                    	<li><a href="listings.php?make=<?php echo $newmakes['make'];?>"><?php echo $newmakes['make']." (".mysql_num_rows($count).")"; ?></a></li>
+                                    <?php } ?>
+                                    </ul>
+                            	
+                            </div>
+                        </div><!-- end cols -->  
+                        <div class="cols c-1" style="width:80px;padding-top:17px;">
+                            <h2></h2>
+                            <div class="cols-data">
+                            	<!--column 2-->
+                                   	<ul>
+                                    <?php 
+                                    	$makes = $listing_obj->getListingsGroupBy(8,8,"make","asc","user_id=$user_id","make");
+                                    	foreach($makes as $newmakes) {
+                                    		$count = mysql_query("select * from listing where make = '".$newmakes['make']."' and user_id = $user_id");
+                                    ?>
+                                    	<li><a href="listings.php?make=<?php echo $newmakes['make'];?>"><?php echo $newmakes['make']." (".mysql_num_rows($count).")"; ?></a></li>
+                                    <?php } ?>
+                                    </ul>
+                            	
+                            </div>
+                        </div><!-- end cols -->  
                     
-                    <div class="cols c-2">
-                        <h2>Price</h2>
-                        <div class="cols-data">
-                            <ul>
-                                <li><a href="listings.php?priceto=5000">Less Than $5,000</a></li>
-                                <li><a href="listings.php?priceto=10000">Less Than $10,000</a></li>
-                                <li><a href="listings.php?priceto=15000">Less Than $15,000</a></li>
-                                <li><a href="listings.php?priceto=20000">Less Than $20,000</a></li>
-                                <li><a href="listings.php?priceto=25000">Less Than $25,000</a></li>
-                                <li><a href="listings.php?priceto=30000">Less Than $30,000</a></li>
-                                <li><a href="listings.php?priceto=35000">Less Than $35,000</a></li>
-                                <li><a href="listings.php?pricefrom=35000">More Than $35,000</a></li>
-                            </ul>
-                        </div>
-                    </div><!-- end cols -->  
+                        <div class="cols c-2">
+                            <h2>Price</h2>
+                            <div class="cols-data">
+                                <ul>
+                                    <li><a href="listings.php?priceto=5000">Less Than $5,000</a></li>
+                                    <li><a href="listings.php?priceto=10000">Less Than $10,000</a></li>
+                                    <li><a href="listings.php?priceto=15000">Less Than $15,000</a></li>
+                                    <li><a href="listings.php?priceto=20000">Less Than $20,000</a></li>
+                                    <li><a href="listings.php?priceto=25000">Less Than $25,000</a></li>
+                                    <li><a href="listings.php?priceto=30000">Less Than $30,000</a></li>
+                                    <li><a href="listings.php?priceto=35000">Less Than $35,000</a></li>
+                                    <li><a href="listings.php?pricefrom=35000">More Than $35,000</a></li>
+                                </ul>
+                            </div>
+                        </div><!-- end cols -->  
                     
                     <div class="cols c-3">
                         <h2>Other</h2>
                         <form action="listings.php" method="GET">
-                        <div class="cols-data">
-                            <label id="lblfirst">Mileage</label>
-                            <select class="qs-select" name="mileagefrom" id="mileagefrom">
-                                <option value="1000">1,000</option>
-                                <option value="10000">10,000</option>
-                                <option value="25000">25,000</option>
-                                <option value="50000">50,000</option>
-                                <option value="100000">100,000</option>
-                            </select>
-                            <p class="center-text">To</p>
-                            <select class="qs-select" name="mileageto" id="mileageto">
-                                <option value="1000">1,000</option>
-                                <option value="10000">10,000</option>
-                                <option value="25000">25,000</option>
-                                <option value="50000">50,000</option>
-                                <option value="100000">100,000</option>                             
-                            </select>
+                            <div class="cols-data">
+                                <label id="lblfirst">Mileage</label>
+                                <select class="qs-select" name="mileagefrom" id="mileagefrom">
+                                    <option value="1000">1,000</option>
+                                    <option value="10000">10,000</option>
+                                    <option value="25000">25,000</option>
+                                    <option value="50000">50,000</option>
+                                    <option value="100000">100,000</option>
+                                </select>
+                                <p class="center-text">To</p>
+                                <select class="qs-select" name="mileageto" id="mileageto">
+                                    <option value="1000">1,000</option>
+                                    <option value="10000">10,000</option>
+                                    <option value="25000">25,000</option>
+                                    <option value="50000">50,000</option>
+                                    <option value="100000">100,000</option>                             
+                                </select>                         
+                                <br />
                            
-                           <br />
-                           
-                            <label>Year</label>
-                            <select class="qs-select" name="yearfrom" id="yearfrom">
-                                <option>Any</option>
-                                <?php
+                                <label>Year</label>
+                                <select class="qs-select" name="yearfrom" id="yearfrom">
+                                    <option>Any</option>
+                                    <?php
                                 	for($yearfrom=2013;$yearfrom>=1990;$yearfrom--) {
                                 		echo "<option>".$yearfrom."</option>";	
-					}
-				?>
-				<option>Other</option>
-                            </select>
-                            <p class="center-text">To</p>
-                            <select class="qs-select" name="yearto" id="yearto">
-                                <option>Any</option>
-                                <?php
+					                   }
+			                        ?>
+				                    <option>Other</option>
+                                </select>
+                                <p class="center-text">To</p>
+                                <select class="qs-select" name="yearto" id="yearto">
+                                    <option>Any</option>
+                                    <?php
                                 	for($yearto=2013;$yearto>=1990;$yearto--) {
-						echo "<option>".$yearto."</option>";	
-					}
-				?>
-				<option>Other</option>
-                            </select>
+				                        echo "<option>".$yearto."</option>";	
+				                    }
+				                    ?>
+				                    <option>Other</option>
+                                </select>
                             
-                           <br />
+                                <br />
                            
-                            <label>Transmission</label>
-                            <select class="qs-select" name="transmission" id="transmission">
-                                <option>Any</option>
-                                <option>Automatic</option>
-                                <option>Manual</option>
-                            </select>
-                            
-                            <div id="bottoms">
-                                <label>Condition</label>
-                                <input type="checkbox" name="used" id="used" checked="checked" >
-                                <span>Used</span>
-                                <input type="submit" name="submit" id="submit" value="Search">
+                                <label>Transmission</label>
+                                <select class="qs-select" name="transmission" id="transmission">
+                                    <option>Any</option>
+                                    <option>Automatic</option>
+                                    <option>Manual</option>
+                                </select>
+                                
+                                <div id="bottoms">
+                                    <label>Condition</label>
+                                    <input type="checkbox" name="used" id="used" checked="checked" >
+                                    <span>Used</span>
+                                    <input type="submit" name="submit" id="submit" value="Search">
+                                </div>
                             </div>
-                        </div>
                         </form>
-                            <span id="close" title="Close">x</span>
+                        <span id="close" title="Close">x</span>
                     </div><!-- end cols -->  
                 
                 </div>
